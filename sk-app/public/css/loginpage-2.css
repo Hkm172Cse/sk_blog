@@ -1,0 +1,90 @@
+body
+    {
+        background-color: #eee;
+    }
+.btn-color
+    {
+        background-color: brown;
+    }
+.sub
+    {
+        background-color: #000;
+    }
+
+.auth.auth-img-bg .techics-auth-form-transparent
+    {
+        border-radius: 22px;
+        background-color: #ffff;
+        height: 483px;
+        margin-top: 130px;
+    }
+.auth.auth-img-bg .techics-auth-form-transparent
+    {
+        border-bottom: 5px solid brown ;
+    }
+.user
+    {
+        margin-bottom: 39px;
+        margin-top: 39px;
+    }
+.user img
+    {
+        width: 250px;
+    }
+.techics-text-custom 
+    {
+        color: #000;
+    }
+.techics-auth-form-transparent 
+    {
+        width: 23%;
+        margin: auto;
+    }
+.techics-input-group
+    {
+        width: 92%;
+    }
+.form-control
+    {
+        color: #000;
+    }
+.showicon
+    {
+        position: absolute;
+        left: 98%;
+        top: 11%;
+    }
+.forget-pass a
+    {
+        text-decoration: none;
+    }
+.forget-pass a h2
+    {
+        text-decoration: none;
+        font-size: 0.878rem;
+    }
+@media (max-width: 406px)
+{
+    .user img
+        {
+            width: 183px;
+            margin-top: 20px;
+        }
+}
+@media (max-width: 1200px) 
+    {
+        .techics-auth-form-transparent 
+            {
+                width: 45%;
+                margin: auto;
+            }
+    }
+@media (max-width: 767px) 
+    {
+        .techics-auth-form-transparent 
+            {
+                width: 70%;
+                margin: auto;
+            }
+    }
+

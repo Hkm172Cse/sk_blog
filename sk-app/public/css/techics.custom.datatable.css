@@ -1,0 +1,78 @@
+#settings-trigger { 
+    background: #ea533f;
+}
+
+.techics-text-custom {
+    color: #ea533f;
+}
+
+.techics-text-custom:hover, .techics-text-custom:focus {
+    color: #ea533f;
+}
+
+.btn-custom {
+    background-color: #ea533f;
+    border:#ea533f;
+}
+
+.btn-custom:hover, .btn-custom:focus {
+    background-color: #EE7565;
+}
+
+.techics-sidebar .nav .nav-item.active > .nav-link i,
+.techics-sidebar .nav .nav-item.active > .nav-link .menu-title,
+.techics-sidebar .nav .nav-item.active > .nav-link .menu-arrow {
+    color: #ea533f;
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #ea533f;
+}
+
+.badge-outline-custom {
+    color: #ea533f;
+    border: 1px solid #ea533f;
+}
+
+.techics-sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link {
+    background: transparent;
+    color: #ea533f;
+}
+.techics-sidebar .nav.sub-menu .nav-item .nav-link.active {
+    color: #ea533f;
+    background: transparent;
+}
+
+.techics-sidebar .nav.sub-menu .nav-item .nav-link:hover {
+    color: #ea533f;
+}
+
+.table-hover tbody tr:hover {
+    color: #212529;
+    background-color: #F6BAB2;
+}
+
+th { 
+    background:#F6BAB2; 
+}
+
+.settings-panel .nav-tabs .nav-item .nav-link.active {
+    color: #ea533f;
+}
+
+.form-check .form-check-label input[type="checkbox"] + .input-helper:before {
+    border: solid #ea533f;
+}
+
+.form-check .form-check-label input[type="checkbox"]:checked + .input-helper:before {
+    background: #ea533f;
+    border-width: 0;
+}
+
+.list-wrapper .completed .remove {
+    color: #ea533f !important;
+}
