@@ -21,23 +21,27 @@ Route::get('/password/reset/{token}',[authController::Class, 'showResetForm'])->
 Route::get('/submit_reset',[authController::Class, 'resetPassword'])->name('user.reset.password.page');
 
 Route::group(['prefix' => 'banner','middleware' => 'loginCheck'], function () {
-    Route::get('banner_data',[banner_controller::Class,'index'])->name('banner_content');
-    Route::get('/get_content',[banner_controller::Class, 'getBannerInfo'])->name('banner_get');
-    Route::get('/add', [banner_controller::Class, 'newInsertion'])->name('new_banner');
-    Route::post('/insert',[banner_controller::Class,'insert_banner'])->name('insert_banner');
-    Route::get('/delete/{id}',[banner_controller::class, 'banner_del'])->name('banner_delete');
-    Route::get('/edit/{id}',[banner_controller::Class, 'edit_page'])->name('banner.edit.page');
-    Route::post('/update', [banner_controller::Class, 'edit_submit'])->name('edit_submit');
+    Route::get('banner_data',[banner_controller::Class,'index'])->name('banner_content')->middleware('prevent-back-history');
+    Route::get('/get_content',[banner_controller::Class, 'getBannerInfo'])->name('banner_get')->middleware('prevent-back-history');
+    Route::get('/add', [banner_controller::Class, 'newInsertion'])->name('new_banner')->middleware('prevent-back-history');
+    Route::post('/insert',[banner_controller::Class,'insert_banner'])->name('insert_banner')->middleware('prevent-back-history');
+    Route::get('/delete/{id}',[banner_controller::class, 'banner_del'])->name('banner_delete')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[banner_controller::Class, 'edit_page'])->name('banner.edit.page')->middleware('prevent-back-history');
+    Route::post('/update', [banner_controller::Class, 'edit_submit'])->name('edit_submit')->middleware('prevent-back-history');
 });
 
-Route::group(['prefix'=>'about_us'],function(){
-    Route::get('/about_us', [aboutUsController::Class, 'index'])->name('about.us.content');
-    Route::get('/edit/{id}',[aboutUsController::Class, 'eidt'])->name('about_us.edit');
-    Route::post('/update',[aboutUsController::Class, 'update'])->name('about_us_edit');
-    Route::get('/insert',[aboutUsController::Class, 'insert_page'])->name('insert.about_us');
-    Route::post('/new_insert',[aboutUsController::Class, 'newInsert'])->name('new.about_us');
+Route::group(['prefix'=>'about_us', 'middleware'=>'loginCheck'],function(){
+    Route::get('/about_us', [aboutUsController::Class, 'index'])->name('about.us.content')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[aboutUsController::Class, 'eidt'])->name('about_us.edit')->middleware('prevent-back-history');
+    Route::post('/update',[aboutUsController::Class, 'update'])->name('about_us_edit')->middleware('prevent-back-history');
+    Route::get('/insert',[aboutUsController::Class, 'insert_page'])->name('insert.about_us')->middleware('prevent-back-history');
+    Route::post('/new_insert',[aboutUsController::Class, 'newInsert'])->name('new.about_us')->middleware('prevent-back-history');
+    Route::get('/delete/{id}',[aboutUsController::Class, 'delete'])->name('about_us.delete')->middleware('prevent-back-history');
 });
 
+Route::group(['prefix'=>'service', 'middleware'=>'loginCheck'],function(){
+    //Route::get('/service',)
+});
 
 // password reset link = https://www.youtube.com/watch?v=SuIQ20H-hc4
 // after login browser back_button = https://www.itsolutionstuff.com/post/laravel-5-how-to-prevent-browser-back-button-after-user-logoutexample.html

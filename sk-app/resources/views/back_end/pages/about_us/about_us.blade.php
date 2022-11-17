@@ -62,9 +62,11 @@
                 </div>
                 @endif
 
-                @if (\Session::has('delete_banner'))
-                <div class="alert alert-success">
-                    {!! \Session::get('delete_banner') !!}
+                @if (\Session::has('del_msg'))
+                <div class="pop-up-box">
+                    <li class="pop-up">
+                        {!! \Session::get('del_msg') !!}
+                    </li>
                 </div>
                 @endif
 
@@ -103,17 +105,23 @@
                                 <td>{{substr($val->title, 0, 20)}}</td>
                                 <td>{{substr($val->sort_des, 0, 20)}}...</td>
                                 <td>{{substr($val->des, 0, 20)}}...</td>
-                                <td>{{$val->img_one}}</td>
-                                <td>{{$val->img_two}}</td>
+                                <td>
+                                    <img src="{{asset('/images/about_us/'.$val->img_one)}}" />
+                                </td>
+                                <td>
+                                    <img src="{{asset('/images/about_us/'.$val->img_two)}}" />
+                                </td>
                                 <td>{{$val->link}}</td>
                                 <td>
                                     <a href="{{route('about_us.edit',['id'=>$val->id])}}">
-                                        <button class="btn btn-secondary btn-icon-text"><i class='fa fa-edit'></i></button>
+                                        <button class="btn btn-secondary btn-icon-text"><i
+                                                class='fa fa-edit'></i></button>
                                     </a>
                                     ||
-                                    <a href="#"
+                                    <a href="{{route('about_us.delete',['id'=>$val->id])}}"
                                         onClick="return confirm('Are you sure want to delete this recored?')">
-                                        <button class="btn btn-danger btn-icon-text"><i class='fa fa-trash'></i></button>
+                                        <button class="btn btn-danger btn-icon-text"><i
+                                                class='fa fa-trash'></i></button>
                                     </a>
 
                                 </td>

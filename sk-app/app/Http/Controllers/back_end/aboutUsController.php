@@ -127,4 +127,12 @@ class aboutUsController extends Controller
             return redirect(route('about.us.content'))->with('update_suc', 'Data Not Changed');
         }
     }
+
+    public function delete($id){
+        $res = aboutUsModel::where('id', '=', $id)->delete();
+        if($res){
+            return redirect(route('about.us.content'))->with('del_msg',"Deleted successfully");
+        }
+        
+    }
 }

@@ -54,7 +54,7 @@
                     <!-- Set Iamge one -->
                     <div class="col-md-6 techics-form-group text-center">
                         <img style="width:100px; height:100px; border-radius:20px"
-                            src="{{asset('images/banner/'.$val->img_one)}}" />
+                            src="{{asset('images/about_us/'.$val->img_one)}}" />
                     </div>
 
                       <!-- Image Two -->
@@ -73,7 +73,7 @@
                     <!-- Set Iamge Two -->
                     <div class="col-md-6 techics-form-group text-center">
                         <img style="width:100px; height:100px; border-radius:20px"
-                            src="{{asset('images/banner/'.$val->img_one)}}" />
+                            src="{{asset('images/about_us/'.$val->img_two)}}" />
                     </div>
 
                     <!--Button two link-->

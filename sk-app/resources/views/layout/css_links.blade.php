@@ -25,5 +25,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="{{asset('css/techics.custom.datatable.css')}}">
     <link rel="stylesheet" href="{{asset('css/techics.main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}"/>
 
 </head>
