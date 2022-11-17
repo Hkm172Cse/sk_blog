@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2022 at 02:13 PM
+-- Generation Time: Nov 17, 2022 at 02:04 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `sk_app`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `business`
+--
+
+CREATE TABLE `business` (
+  `id` int(11) NOT NULL,
+  `title` varchar(1000) NOT NULL,
+  `sort_des` varchar(1000) NOT NULL,
+  `button_one` varchar(255) NOT NULL,
+  `button_two` varchar(255) NOT NULL,
+  `image` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `business`
+--
+
+INSERT INTO `business` (`id`, `title`, `sort_des`, `button_one`, `button_two`, `image`) VALUES
+(2, 'asfdsaf', 'sdfsf', 'sdfasf', 'sdfadf', '1668686598-card-bg.jpg'),
+(3, 'asfdsaf', 'sdfsf', 'sdfasf', 'sdfadf', '1668686726-loader.gif'),
+(4, 'asfdsaf', 'sdfsf', 'sdfasf', 'sdfadf', '1668686745-Unign.png'),
+(6, 'sfdsdf', 'sdfds', 'sdfs', 'sdfsdf', '1668688975-Unign.png'),
+(7, 'asfdsaf', 'sdfsf', 'sdfasf', 'sdfadf', '1668689033-face.jpg');
 
 -- --------------------------------------------------------
 
@@ -55,8 +81,7 @@ CREATE TABLE `table_about_us` (
 --
 
 INSERT INTO `table_about_us` (`id`, `title`, `sort_des`, `des`, `img_one`, `img_two`, `link`) VALUES
-(1, 'About u', 'We have  on the legal and IT sectors which are the heart of our business.', 'We have grown to become one of the leading professionals in consultancy services and managing business operations.In such a short space of time we have grasped on to the high level of demand in both industries and have led to become instinctive in decision making, professional on the advice we provide to our clients.', '1668600442-tech.png.png', '1668600433-background-one.webp.webp', 'http://www.facebook.com'),
-(2, 'About our work', 'We have focussed on the legal and IT sectors which are the heart of our business.', 'We have grown to become one of the leading professionals in consultancy services and managing business operations.\r\n\r\nIn such a short space of time we have grasped on to the high level of demand in both industries and have led to become instinctive in decision making, professional on the advice we provide to our clients.', '1668604061-background-three.webp.webp', '1668604061-background-two.webp.webp', 'https://www.youtube.com');
+(1, 'What we do', 'Service we provide', 'Quis autem vel eum iure reprenderit qui in ea voluptate velit as se ruam nihil molestiae....', '1668600442-tech.png.png', '1668600433-background-one.webp.webp', 'get started');
 
 -- --------------------------------------------------------
 
@@ -107,9 +132,40 @@ INSERT INTO `table_banner` (`id`, `sort_des`, `des`, `image`, `btn_one`, `btn_tw
 (16, 'Create New Ways to Better Invest', 'Create New Ways to Better Invest', '1668581388-banner.png', 'Get Started', 'Learn More', 'https://www.youtube.com', 'https://www.youtube.com'),
 (18, 'Create New Ways to Better Invest', 'Create New Ways to Better Invest', '1668581948-banner.svg', 'Get Started', 'Learn More', 'http://www.facebook.com', 'https://www.youtube.com');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `table_service`
+--
+
+CREATE TABLE `table_service` (
+  `id` int(11) NOT NULL,
+  `section` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `des` varchar(1000) NOT NULL,
+  `service_btn` varchar(255) NOT NULL,
+  `image` varchar(1000) NOT NULL,
+  `service_title` varchar(255) NOT NULL,
+  `service_des` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `table_service`
+--
+
+INSERT INTO `table_service` (`id`, `section`, `title`, `des`, `service_btn`, `image`, `service_title`, `service_des`) VALUES
+(1, 'What we doooo', 'Service we provide', 'Quis autem vel eum iure repren\r\nderit qui in ea voluptate velit as\r\nse ruam nihil molestiae....', 'get started', '1668674252-card-bg.jpg', 'Tech_legal', 'Quis autem vel eum iure reprenderit qui in ea voluptate velit asse ruam nihil molestiae....'),
+(2, 'What we doooo', 'asdf', 'sfdsa', 'asdfa', '1668680832-background-three.webp', 'sdf', 'sdfds');
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `business`
+--
+ALTER TABLE `business`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `password_reset`
@@ -136,8 +192,20 @@ ALTER TABLE `table_banner`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `table_service`
+--
+ALTER TABLE `table_service`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `business`
+--
+ALTER TABLE `business`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `password_reset`
@@ -149,7 +217,7 @@ ALTER TABLE `password_reset`
 -- AUTO_INCREMENT for table `table_about_us`
 --
 ALTER TABLE `table_about_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `table_administrator`
@@ -162,6 +230,12 @@ ALTER TABLE `table_administrator`
 --
 ALTER TABLE `table_banner`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `table_service`
+--
+ALTER TABLE `table_service`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

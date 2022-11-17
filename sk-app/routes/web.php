@@ -51,12 +51,12 @@ Route::group(['prefix'=>'service', 'middleware'=>'loginCheck'],function(){
 });
 
 Route::group(['prefix'=>'business_trends', 'middleware'=>'loginCheck'], function(){
-    Route::get('/add', [businessController::Class, 'add'])->name('add.business');
-    Route::post('/insert', [businessController::Class, 'insert'])->name('insert.business');
-    Route::get('/business',[businessController::Class, 'index'])->name('business.content');
-    Route::get('/edit/{id}',[businessController::Class, 'edit'])->name('business.edit.page');
-    Route::post('/update', [businessController::Class, 'update'])->name('business.update');
-    Route::get('/delete/{id}', [businessController::Class, 'delete'])->name('business.delete');
+    Route::get('/add', [businessController::Class, 'add'])->name('add.business')->middleware('prevent-back-history');
+    Route::post('/insert', [businessController::Class, 'insert'])->name('insert.business')->middleware('prevent-back-history');
+    Route::get('/business',[businessController::Class, 'index'])->name('business.content')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[businessController::Class, 'edit'])->name('business.edit.page')->middleware('prevent-back-history');
+    Route::post('/update', [businessController::Class, 'update'])->name('business.update')->middleware('prevent-back-history');
+    Route::get('/delete/{id}', [businessController::Class, 'delete'])->name('business.delete')->middleware('prevent-back-history');
 });
 
 // password reset link = https://www.youtube.com/watch?v=SuIQ20H-hc4
