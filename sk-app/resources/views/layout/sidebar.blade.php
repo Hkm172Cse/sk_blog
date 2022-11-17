@@ -52,6 +52,11 @@
                                         Service
                                     </a>
                                 </li>
+                                <li class="techics-nav-item">
+                                    <a class="nav-link" href="{{route('business.content')}}">
+                                        business trends
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>

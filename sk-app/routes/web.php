@@ -5,6 +5,7 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\back_end\banner_controller;
 use App\Http\Controllers\back_end\aboutUsController;
 use App\Http\Controllers\back_end\serviceController;
+use App\Http\Controllers\back_end\businessController;
 
 
 
@@ -41,12 +42,21 @@ Route::group(['prefix'=>'about_us', 'middleware'=>'loginCheck'],function(){
 });
 
 Route::group(['prefix'=>'service', 'middleware'=>'loginCheck'],function(){
-    Route::get('/add',[serviceController::Class, 'add'])->name('add.service');
-    Route::post('/insert',[serviceController::Class, 'insert'])->name('service.insert');
-    Route::get('/service',[serviceController::Class, 'index'])->name('service.content');
-    Route::get('/edit/{id}',[serviceController::Class, 'edit'])->name('service.edit.page');
-    Route::post('/update',[serviceController::Class, 'update'])->name('service.update');
-    Route::get('/delete/{id}', [serviceController::Class, 'delete'])->name('service.delete');
+    Route::get('/add',[serviceController::Class, 'add'])->name('add.service')->middleware('prevent-back-history');
+    Route::post('/insert',[serviceController::Class, 'insert'])->name('service.insert')->middleware('prevent-back-history');
+    Route::get('/service',[serviceController::Class, 'index'])->name('service.content')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[serviceController::Class, 'edit'])->name('service.edit.page')->middleware('prevent-back-history');
+    Route::post('/update',[serviceController::Class, 'update'])->name('service.update')->middleware('prevent-back-history');
+    Route::get('/delete/{id}', [serviceController::Class, 'delete'])->name('service.delete')->middleware('prevent-back-history');
+});
+
+Route::group(['prefix'=>'business_trends', 'middleware'=>'loginCheck'], function(){
+    Route::get('/add', [businessController::Class, 'add'])->name('add.business');
+    Route::post('/insert', [businessController::Class, 'insert'])->name('insert.business');
+    Route::get('/business',[businessController::Class, 'index'])->name('business.content');
+    Route::get('/edit/{id}',[businessController::Class, 'edit'])->name('business.edit.page');
+    Route::post('/update', [businessController::Class, 'update'])->name('business.update');
+    Route::get('/delete/{id}', [businessController::Class, 'delete'])->name('business.delete');
 });
 
 // password reset link = https://www.youtube.com/watch?v=SuIQ20H-hc4
