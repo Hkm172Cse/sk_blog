@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\back_end\banner_controller;
 use App\Http\Controllers\back_end\aboutUsController;
+use App\Http\Controllers\back_end\serviceController;
 
 
 
@@ -40,7 +41,12 @@ Route::group(['prefix'=>'about_us', 'middleware'=>'loginCheck'],function(){
 });
 
 Route::group(['prefix'=>'service', 'middleware'=>'loginCheck'],function(){
-    //Route::get('/service',)
+    Route::get('/add',[serviceController::Class, 'add'])->name('add.service');
+    Route::post('/insert',[serviceController::Class, 'insert'])->name('service.insert');
+    Route::get('/service',[serviceController::Class, 'index'])->name('service.content');
+    Route::get('/edit/{id}',[serviceController::Class, 'edit'])->name('service.edit.page');
+    Route::post('/update',[serviceController::Class, 'update'])->name('service.update');
+    Route::get('/delete/{id}', [serviceController::Class, 'delete'])->name('service.delete');
 });
 
 // password reset link = https://www.youtube.com/watch?v=SuIQ20H-hc4

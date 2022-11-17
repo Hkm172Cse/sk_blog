@@ -47,6 +47,11 @@
                                         about us
                                     </a>
                                 </li>
+                                <li class="techics-nav-item">
+                                    <a class="nav-link" href="{{route('service.content')}}">
+                                        Service
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>

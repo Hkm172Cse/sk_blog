@@ -46,6 +46,19 @@
             });
         }, 3000);
 
+        window.setTimeout(function () {
+            $(".page-success-popup-box").fadeTo(500, 0).slideUp(500, function () {
+                $(this).remove();
+            });
+        }, 3000);
+
+        
+        window.setTimeout(function () {
+            $(".page-error-popup-box").fadeTo(500, 0).slideUp(500, function () {
+                $(this).remove();
+            });
+        }, 3000);
+
         $('#example').DataTable({
             dom: 'Bfrtip',
             buttons: [

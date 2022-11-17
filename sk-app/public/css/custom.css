@@ -17,3 +17,34 @@
     font-weight:bold;
     list-style: none;    
 }
+.page-success-popup-box{
+    border:1px solid #1b4fd3d4;
+    width: 100%;
+    border-radius: 3px;
+    margin:2px auto;
+}
+.page-success-pop-up{
+    padding-top:10px;
+    padding-bottom:10px;
+    color: #0e46c8a2;
+    margin-left:20px;
+    font-size:12px;
+    font-weight:bold;
+    list-style: none;    
+}
+
+.page-error-popup-box{
+    border:1px solid #e73d3d;
+    width: 100%;
+    border-radius: 3px;
+    margin:2px auto;
+}
+.page-error-pop-up{
+    padding-top:10px;
+    padding-bottom:10px;
+    color: #e81c2a;
+    margin-left:20px;
+    font-size:12px;
+    font-weight:bold;
+    list-style: none;    
+}
