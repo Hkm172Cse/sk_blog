@@ -43,10 +43,13 @@ class touchController extends Controller
             'button'=>'required'
         ]);
 
+        touchModel::where('status','active')->update(['status'=>'inactive']);
+
         $res = touchModel::insert([
             'name'=>$req->name,
             'title'=>$req->title,
-            'button'=>$req->button
+            'button'=>$req->button,
+            'status'=>$req->status
         ]);
         
         if($res){
@@ -57,6 +60,7 @@ class touchController extends Controller
     public function status(Request $req){
         $st = $req->input('status');
         $id = $req->input('id');
+        touchModel::where('status', "active")->update(['status'=>'inactive']);
         $result = touchModel::where('id',$id)->update([
             'status'=>$st
         ]); 

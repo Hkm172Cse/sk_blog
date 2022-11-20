@@ -47,7 +47,7 @@
                         <h4 class="card-title">Page Title</h4>
                     </div>
                     <div class="col-md-6 text-right mb-3">
-                        <a href="{{route('new.getintouch')}}">
+                        <a href="{{route('new.left_footer')}}">
                             <button type="button" class="btn btn-sm btn-outline-orange">
                                 Create
                                 <i class="mdi mdi-play-circle ml-1"></i>
@@ -80,9 +80,7 @@
                             <tr>
                                 <th>Sl</th>
                                 <th>Name</th>
-                                <th>Title</th>
-                                <th>Button</th>
-                                <th>Status</th>
+                                <th>Link</th>
                                 <th>action</th>
                             </tr>
                         </thead>
@@ -94,23 +92,13 @@
                             <tr>
                                 <td>{{++$i}}</td>
                                 <td>{{$val->name}}</td>
-                                <td>{{$val->title}}</td>
-
-                                <td>{{$val->button}}</td>
-                                @if($val->status == 'active')
-                                <td><button data-id="{{$val->id}}" class="btn btn-sm btn-info status">{{$val->status}}</button></td>
-                                @endif
-
-                                @if($val->status == 'inactive')
-                                <td><button data-id="{{$val->id}}" class="btn btn-sm btn-danger status">{{$val->status}}</button></td>
-                                @endif
-                                
+                                <td>{{$val->link}}</td>
                                 <td>
-                                    <a href="{{route('getintouch.edit',['id'=>$val->id])}}">
+                                    <a href="{{route('left_footer.edit',['id'=>$val->id])}}">
                                         <button class="btn btn-secondary btn-icon-text"><i class='fa fa-edit'></i></button>
                                     </a>
                                     ||
-                                    <a href="{{route('review.delete',['id'=>$val->id])}}"
+                                    <a href="{{route('left_footer.delete',['id'=>$val->id])}}"
                                         onClick="return confirm('Are you sure want to delete this recored?')">
                                         <button class="btn btn-danger btn-icon-text"><i class='fa fa-trash'></i></button>
                                     </a>

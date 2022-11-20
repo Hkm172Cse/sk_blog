@@ -13,31 +13,22 @@
                 </div>
                 @endforeach
 
-                <form action="{{route('insert.getintouch')}}" class="row mt-2" method="post"
+                <form action="{{route('insert.left_footer')}}" class="row mt-2" method="post"
                     enctype="multipart/form-data">
                     @csrf
                     <!--Name-->
                     <div class="col-md-6 techics-form-group">
                         <label for="input_field">Name </label>
                         <div class="float-right text-danger">Required</div>
-                        <input type="hidden" name="status" value="active"/>
                         <input type="text" name="name" id="input_field" class="form-control"
                             placeholder="Enter Input Field">
                     </div>
 
-                    <!-- Title -->
+                    <!-- Link -->
                     <div class="col-md-6 techics-form-group">
                         <label for="input_field">Title</label>
                         <div class="float-right text-danger">Required</div>
-                        <input type="text" name="title" id="input_field" class="form-control"
-                            placeholder="Enter Input Field">
-                    </div>
-
-                     <!-- Button -->
-                     <div class="col-md-6 techics-form-group">
-                        <label for="input_field">Button name</label>
-                        <div class="float-right text-danger">Required</div>
-                        <input type="text" name="button" id="input_field" class="form-control"
+                        <input type="text" name="link" id="input_field" class="form-control"
                             placeholder="Enter Input Field">
                     </div>
                     

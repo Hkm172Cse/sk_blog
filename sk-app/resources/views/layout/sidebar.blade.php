@@ -72,6 +72,21 @@
                                         get in touch
                                     </a>
                                 </li>
+                                <li class="techics-nav-item">
+                                    <a class="nav-link" href="{{route('left.footer.link')}}">
+                                        left footer link
+                                    </a>
+                                </li>
+                                <li class="techics-nav-item">
+                                    <a class="nav-link" href="{{route('right.footer.link')}}">
+                                        right footer link
+                                    </a>
+                                </li>
+                                <li class="techics-nav-item">
+                                    <a class="nav-link" href="{{route('business.overview')}}">
+                                        Business Overview
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>

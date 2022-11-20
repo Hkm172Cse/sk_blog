@@ -47,7 +47,7 @@
                         <h4 class="card-title">Page Title</h4>
                     </div>
                     <div class="col-md-6 text-right mb-3">
-                        <a href="{{route('new.getintouch')}}">
+                        <a href="{{route('new_banner')}}">
                             <button type="button" class="btn btn-sm btn-outline-orange">
                                 Create
                                 <i class="mdi mdi-play-circle ml-1"></i>
@@ -56,15 +56,15 @@
                     </div>
                 </div>
 
-                @if (\Session::has('insert'))
+                @if (\Session::has('new_banner'))
                 <div class="alert alert-success">
-                    {!! \Session::get('insert') !!}
+                    {!! \Session::get('new_banner') !!}
                 </div>
                 @endif
 
-                @if (\Session::has('del_msg'))
+                @if (\Session::has('delete_banner'))
                 <div class="alert alert-success">
-                    {!! \Session::get('del_msg') !!}
+                    {!! \Session::get('delete_banner') !!}
                 </div>
                 @endif
 
@@ -74,15 +74,24 @@
                     {!! \Session::get('update') !!}
                 </div>
                 @endif
+
+
+
+
+
                 <div class="col-md-12 table-responsive">
                     <table id="example" class="table table-striped table-hover table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>Name</th>
-                                <th>Title</th>
-                                <th>Button</th>
-                                <th>Status</th>
+                                <th>Project</th>
+                                <th>Project numbers</th>
+                                <th>Customer</th>
+                                <th>Customer number</th>
+                                <th>data</th>
+                                <th>data number</th>
+                                <th>class</th>
+                                <th>class number</th>
                                 <th>action</th>
                             </tr>
                         </thead>
@@ -93,28 +102,18 @@
                             @foreach($data as $val)
                             <tr>
                                 <td>{{++$i}}</td>
-                                <td>{{$val->name}}</td>
-                                <td>{{$val->title}}</td>
-
-                                <td>{{$val->button}}</td>
-                                @if($val->status == 'active')
-                                <td><button data-id="{{$val->id}}" class="btn btn-sm btn-info status">{{$val->status}}</button></td>
-                                @endif
-
-                                @if($val->status == 'inactive')
-                                <td><button data-id="{{$val->id}}" class="btn btn-sm btn-danger status">{{$val->status}}</button></td>
-                                @endif
-                                
+                                <td>{{$val->project}}</td>
+                                <td>{{$val->project_num}}</td>
+                                <td>{{$val->customer}}</td>
+                                <td>{{$val->customer_num}}</td>
+                                <td>{{$val->data}}</td>
+                                <td>{{$val->data_num}}</td>
+                                <td>{{$val->class_base}}</td>
+                                <td>{{$val->class_base_num}}</td>
                                 <td>
-                                    <a href="{{route('getintouch.edit',['id'=>$val->id])}}">
+                                    <a href="{{route('business_overview.edit',['id'=>$val->id])}}">
                                         <button class="btn btn-secondary btn-icon-text"><i class='fa fa-edit'></i></button>
                                     </a>
-                                    ||
-                                    <a href="{{route('review.delete',['id'=>$val->id])}}"
-                                        onClick="return confirm('Are you sure want to delete this recored?')">
-                                        <button class="btn btn-danger btn-icon-text"><i class='fa fa-trash'></i></button>
-                                    </a>
-
                                 </td>
                             </tr>
                             @endforeach

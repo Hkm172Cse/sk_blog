@@ -32,12 +32,13 @@
         if(st == 'inactive'){
             st = 'active';
             $(this).html("active");
-            $(this).removeClass("btn-primary");
+            $(this).removeClass("btn-danger");
             $(this).addClass('btn-info');
             const url = '/chenged_status';
             axios.post(url,{id:id, status:st})
             .then(function(response){
                 console.log(response);
+                location.reload();
             })
             .catch(function(error){
                 console.log(error);
@@ -55,9 +56,11 @@
             axios.post(url,{id:id, status:st})
             .then(function(response){
                 console.log(response);
+                location.reload();
             })
             .catch(function(error){
                 console.log(error);
+                
             }); 
 
             return; 
