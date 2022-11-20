@@ -49,7 +49,7 @@ class businessController extends Controller
     public function update(Request $req){
         $id = $req->input('edit_id');
         if($req->image == null){
-            $result = businessModel::insert([
+            $result = businessModel::where('id',$id)->update([
                 'title'=>$req->title,
                 'sort_des'=>$req->sort_des,
                 'button_one'=>$req->btn_one,
@@ -64,7 +64,7 @@ class businessController extends Controller
 
         $newImage = time()."-".$req->image->getClientOriginalName();
         $req->image->move(public_path('images/business'), $newImage);
-        $result = businessModel::insert([
+        $result = businessModel::where('id',$id)->update([
             'title'=>$req->title,
             'sort_des'=>$req->sort_des,
             'button_one'=>$req->btn_one,

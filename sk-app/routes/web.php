@@ -6,6 +6,9 @@ use App\Http\Controllers\back_end\banner_controller;
 use App\Http\Controllers\back_end\aboutUsController;
 use App\Http\Controllers\back_end\serviceController;
 use App\Http\Controllers\back_end\businessController;
+use App\Http\Controllers\back_end\caseController;
+use App\Http\Controllers\back_end\reviewController;
+use App\Http\Controllers\back_end\touchController;
 
 
 
@@ -16,6 +19,7 @@ Route::get('/', function () {
 Route::get('/administrator',[authController::Class,'login_page']);
 Route::get('/login', [authController::Class, 'login']);
 Route::get('/logout',[authController::Class, 'logout']);
+route::post('/chenged_status', [touchController::Class, 'status']);
 
 Route::get('/forgot-password',[authController::Class, 'forgotPpassword']);
 Route::post('/forgotpassword',[authController::Class, 'handleSubmition']);
@@ -57,6 +61,34 @@ Route::group(['prefix'=>'business_trends', 'middleware'=>'loginCheck'], function
     Route::get('/edit/{id}',[businessController::Class, 'edit'])->name('business.edit.page')->middleware('prevent-back-history');
     Route::post('/update', [businessController::Class, 'update'])->name('business.update')->middleware('prevent-back-history');
     Route::get('/delete/{id}', [businessController::Class, 'delete'])->name('business.delete')->middleware('prevent-back-history');
+});
+
+Route::group(['prefix'=>'legal_case', 'middleware'=>'loginCheck'], function(){
+    Route::get('/case', [caseController::Class, 'index'])->name('case.content')->middleware('prevent-back-history');
+    Route::get('/edit/{id}', [caseController::Class, 'edit'])->name('case.edit.page')->middleware('prevent-back-history');
+    Route::post('/update', [caseController::Class, 'update'])->name('case.update')->middleware('prevent-back-history');
+    Route::get('/add', [caseController::Class, 'add'])->name('new.case')->middleware('prevent-back-history');
+    Route::post('/insert',[caseController::Class, 'insert'])->name('insert.case')->middleware('prevent-back-history');
+    Route::get('/delete/{id}', [caseController::Class, 'delete'])->name('case.delete')->middleware('prevent-back-history');
+
+});
+
+Route::group(['prefix'=>'client_review', 'middleware'=>'loginCheck'],function(){
+    Route::get('/review',[reviewController::Class, 'index'])->name('client.review.content');
+    Route::get('/edit/{id}', [reviewController::Class, 'edit'])->name('review.edit.page');
+    Route::post('/update',[reviewController::Class, 'update'])->name('review.update');
+    Route::get('/delete/{id}', [reviewController::Class, 'delete'])->name('review.delete');
+    Route::get('/add', [reviewController::Class, 'add'])->name('new.review');
+    Route::post('/insert', [reviewController::Class, 'insert'])->name('insert.review');
+});
+
+Route::group(['prefix'=>'get_in_touch', 'middleware'=>'loginCheck'],function(){
+    Route::get('/touch',[touchController::Class, 'index'])->name('getintouch.content');
+    Route::get('/edit/{id}',[touchController::Class, 'edit'])->name('getintouch.edit');
+    Route::post('/update',[touchController::Class, 'update'])->name('getintouch.update');
+    Route::get('/add', [touchController::Class, 'add'])->name('new.getintouch');
+    Route::post('/insert', [touchController::Class, 'insert'])->name('insert.getintouch');
+
 });
 
 // password reset link = https://www.youtube.com/watch?v=SuIQ20H-hc4

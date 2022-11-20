@@ -57,6 +57,21 @@
                                         business trends
                                     </a>
                                 </li>
+                                <li class="techics-nav-item">
+                                    <a class="nav-link" href="{{route('case.content')}}">
+                                        Legal case
+                                    </a>
+                                </li>
+                                <li class="techics-nav-item">
+                                    <a class="nav-link" href="{{route('client.review.content')}}">
+                                        Client Review
+                                    </a>
+                                </li>
+                                <li class="techics-nav-item">
+                                    <a class="nav-link" href="{{route('getintouch.content')}}">
+                                        get in touch
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>

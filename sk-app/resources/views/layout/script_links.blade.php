@@ -25,6 +25,47 @@
 
 
 <script>
+    
+    $(".status").on("click", function(){
+        let st = $(this).html();
+        let id = $(this).attr('data-id');
+        if(st == 'inactive'){
+            st = 'active';
+            $(this).html("active");
+            $(this).removeClass("btn-primary");
+            $(this).addClass('btn-info');
+            const url = '/chenged_status';
+            axios.post(url,{id:id, status:st})
+            .then(function(response){
+                console.log(response);
+            })
+            .catch(function(error){
+                console.log(error);
+            }); 
+
+            return; 
+         
+        }
+        if(st == 'active'){
+            st = 'inactive';
+            $(this).html("inactive");
+            $(this).removeClass("btn-info");
+            $(this).addClass('btn-danger');
+            const url = '/chenged_status';
+            axios.post(url,{id:id, status:st})
+            .then(function(response){
+                console.log(response);
+            })
+            .catch(function(error){
+                console.log(error);
+            }); 
+
+            return; 
+        }
+        
+        
+    })
+
     $("#banner_modal_btn").on("click", function () {
         let sort_des = $("#sort_des").val();
         let des = $("#des").val();
