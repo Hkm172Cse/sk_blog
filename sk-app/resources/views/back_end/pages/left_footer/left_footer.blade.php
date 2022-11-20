@@ -39,12 +39,89 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="card-title">Page Title</h4>
+                        <h4 class="card-title">Footer Left Side</h4>
+                    </div>
+                    <div class="col-md-6 text-right mb-3">
+                        <a href="{{route('new.left_footer')}}">
+                            <button type="button" class="btn btn-sm btn-outline-orange">
+                                Create
+                                <i class="mdi mdi-play-circle ml-1"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                @if (\Session::has('insert'))
+                <div class="alert alert-success">
+                    {!! \Session::get('insert') !!}
+                </div>
+                @endif
+
+                @if (\Session::has('del_msg'))
+                <div class="alert alert-success">
+                    {!! \Session::get('del_msg') !!}
+                </div>
+                @endif
+
+
+                @if (\Session::has('update'))
+                <div class="alert alert-success">
+                    {!! \Session::get('update') !!}
+                </div>
+                @endif
+                <div class="col-md-12 table-responsive">
+                    <table id="example2" class="table table-striped table-hover table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Sl</th>
+                                <th>Name</th>
+                                <th>Link</th>
+                                <th>action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                            $i = 0
+                            @endphp
+                            @foreach($data as $val)
+                            <tr>
+                                <td>{{++$i}}</td>
+                                <td>{{$val->name}}</td>
+                                <td>{{$val->link}}</td>
+                                <td>
+                                    <a href="{{route('left_footer.edit',['id'=>$val->id])}}">
+                                        <button class="btn btn-secondary btn-icon-text"><i
+                                                class='fa fa-edit'></i></button>
+                                    </a>
+                                    ||
+                                    <a href="{{route('left_footer.delete',['id'=>$val->id])}}"
+                                        onClick="return confirm('Are you sure want to delete this recored?')">
+                                        <button class="btn btn-danger btn-icon-text"><i
+                                                class='fa fa-trash'></i></button>
+                                    </a>
+
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Left data table-->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="card-title">Footer Left Side</h4>
                     </div>
                     <div class="col-md-6 text-right mb-3">
                         <a href="{{route('new.left_footer')}}">
@@ -95,12 +172,14 @@
                                 <td>{{$val->link}}</td>
                                 <td>
                                     <a href="{{route('left_footer.edit',['id'=>$val->id])}}">
-                                        <button class="btn btn-secondary btn-icon-text"><i class='fa fa-edit'></i></button>
+                                        <button class="btn btn-secondary btn-icon-text"><i
+                                                class='fa fa-edit'></i></button>
                                     </a>
                                     ||
                                     <a href="{{route('left_footer.delete',['id'=>$val->id])}}"
                                         onClick="return confirm('Are you sure want to delete this recored?')">
-                                        <button class="btn btn-danger btn-icon-text"><i class='fa fa-trash'></i></button>
+                                        <button class="btn btn-danger btn-icon-text"><i
+                                                class='fa fa-trash'></i></button>
                                     </a>
 
                                 </td>

@@ -24,7 +24,7 @@
 
                     <!-- Link Field -->
                     <div class="col-md-6 techics-form-group">
-                        <label for="input_field">Title </label>
+                        <label for="input_field">Link </label>
                         <input type="text" name="link" id="input_field" value="{{$val->link}}"
                             class="form-control" placeholder="Enter Input Field">
                     </div>

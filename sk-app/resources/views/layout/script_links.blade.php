@@ -109,6 +109,13 @@
                 'copy', 'csv', 'excel', 'pdf', 'print', 'colvis'
             ],
         });
+
+        $('#example2').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print', 'colvis'
+            ],
+        });
         $('.dt-button').addClass('btn btn-sm btn-outline-orange mb-1 mr-1');
         $('.dt-button').removeClass('dt-button');
     });

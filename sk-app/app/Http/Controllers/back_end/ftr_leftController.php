@@ -8,10 +8,11 @@ use App\Models\back_end\ftr_left_Model;
 
 class ftr_leftController extends Controller
 {
-    public function index(){
-        $data = ftr_left_Model::all();
-        return view('back_end.pages.left_footer.left_footer',['data'=>$data]);
-    }
+
+    // public function index(){
+    //     $data = ftr_left_Model::all();
+    //     return view('back_end.pages.left_footer.left_footer',['data'=>$data]);
+    // }
 
     public function edit($id){
         $data = ftr_left_Model::where('id',$id)->get();
@@ -25,9 +26,9 @@ class ftr_leftController extends Controller
             'link'=> $req->link
         ]);
         if($res){
-            return redirect(route('left.footer.link'))->with('update',"update successfuly!!");
+            return redirect(route('foote.user.links'))->with('update_left',"update successfuly!!");
         }else{
-            return redirect(route('left.footer.link'))->with('update',"Data not Chenged!!");
+            return redirect(route('foote.user.links'))->with('update_left',"Data not Chenged!!");
         }
     }
 
@@ -46,14 +47,14 @@ class ftr_leftController extends Controller
             'link'=>$req->name
         ]);
         if($res){
-            return redirect(route('left.footer.link'))->with('insert','inserted successfully!!');
+            return redirect(route('foote.user.links'))->with('insert_left','inserted successfully!!');
         }
     }
 
     public function delete($id){
         $res = ftr_left_Model::where('id',$id)->delete();
         if($res){
-            return redirect(route('left.footer.link'))->with('del_msg','Deleted successfully!!');
+            return redirect(route('foote.user.links'))->with('del_msg_left','Deleted successfully!!');
         }
     }
 }

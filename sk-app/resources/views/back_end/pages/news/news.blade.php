@@ -47,7 +47,7 @@
                         <h4 class="card-title">Page Title</h4>
                     </div>
                     <div class="col-md-6 text-right mb-3">
-                        <a href="{{route('new.right_footer')}}">
+                        <a href="{{route('new_news')}}">
                             <button type="button" class="btn btn-sm btn-outline-orange">
                                 Create
                                 <i class="mdi mdi-play-circle ml-1"></i>
@@ -62,25 +62,33 @@
                 </div>
                 @endif
 
-                @if (\Session::has('del_msg'))
+                @if (\Session::has('delete_banner'))
                 <div class="alert alert-success">
-                    {!! \Session::get('del_msg') !!}
+                    {!! \Session::get('delete_banner') !!}
                 </div>
                 @endif
 
 
-                @if (\Session::has('update'))
+                @if (\Session::has('update_suc'))
                 <div class="alert alert-success">
-                    {!! \Session::get('update') !!}
+                    {!! \Session::get('update_suc') !!}
                 </div>
                 @endif
+
+
+
+
+
                 <div class="col-md-12 table-responsive">
                     <table id="example" class="table table-striped table-hover table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>Name</th>
-                                <th>Link</th>
+                                <th>Title</th>
+                                <th>Date</th>
+                                <th>News</th>
+                                <th>Tag</th>
+                                <th>Image</th>
                                 <th>action</th>
                             </tr>
                         </thead>
@@ -91,18 +99,19 @@
                             @foreach($data as $val)
                             <tr>
                                 <td>{{++$i}}</td>
-                                <td>{{$val->name}}</td>
-                                <td>{{$val->link}}</td>
+                                <td>{{$val->title}}</td>
+                                <td>{{$val->date}}</td>
+                                <td>{{substr($val->news, 0, 20)}}</td>
+                                <td>{{$val->tag}}</td>
+                                <td><img src="{{asset('images/news/'.$val->image)}}" /></td>
                                 <td>
-                                    <a href="{{route('right_footer.edit',['id'=>$val->id])}}">
-                                        <button class="btn btn-secondary btn-icon-text"><i
-                                                class='fa fa-edit'></i></button>
+                                    <a href="{{route('news.edit',['id'=>$val->id])}}">
+                                        <button class="btn btn-secondary btn-icon-text"><i class='fa fa-edit'></i></button>
                                     </a>
                                     ||
-                                    <a href="{{route('right_footer.delete',['id'=>$val->id])}}"
+                                    <a href="{{route('news.delete',['id'=>$val->id])}}"
                                         onClick="return confirm('Are you sure want to delete this recored?')">
-                                        <button class="btn btn-danger btn-icon-text"><i
-                                                class='fa fa-trash'></i></button>
+                                        <button class="btn btn-danger btn-icon-text"><i class='fa fa-trash'></i></button>
                                     </a>
 
                                 </td>

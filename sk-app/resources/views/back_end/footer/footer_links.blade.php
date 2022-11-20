@@ -39,7 +39,84 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="card-title">Footer Left Side</h4>
+                    </div>
+                    <div class="col-md-6 text-right mb-3">
+                        <a href="{{route('new.left_footer')}}">
+                            <button type="button" class="btn btn-sm btn-outline-orange">
+                                Create
+                                <i class="mdi mdi-play-circle ml-1"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                @if (\Session::has('insert_left'))
+                <div class="alert alert-success">
+                    {!! \Session::get('insert_left') !!}
+                </div>
+                @endif
+
+                @if (\Session::has('del_msg_left'))
+                <div class="alert alert-success">
+                    {!! \Session::get('del_msg_left') !!}
+                </div>
+                @endif
+
+
+                @if (\Session::has('update_left'))
+                <div class="alert alert-success">
+                    {!! \Session::get('update_left') !!}
+                </div>
+                @endif
+                <div class="col-md-12 table-responsive">
+                    <table id="example2" class="table table-striped table-hover table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Sl</th>
+                                <th>Name</th>
+                                <th>Link</th>
+                                <th>action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                            $i = 0
+                            @endphp
+                            @foreach($left_links as $left_links)
+                            <tr>
+                                <td>{{++$i}}</td>
+                                <td>{{$left_links->name}}</td>
+                                <td>{{$left_links->link}}</td>
+                                <td>
+                                    <a href="{{route('left_footer.edit',['id'=>$left_links->id])}}">
+                                        <button class="btn btn-secondary btn-icon-text"><i
+                                                class='fa fa-edit'></i></button>
+                                    </a>
+                                    ||
+                                    <a href="{{route('left_footer.delete',['id'=>$left_links->id])}}"
+                                        onClick="return confirm('Are you sure want to delete this recored?')">
+                                        <button class="btn btn-danger btn-icon-text"><i
+                                                class='fa fa-trash'></i></button>
+                                    </a>
+
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Left data table-->
+    <div class="col-md-6">
         <div class="card">
             <div class="card-body">
                 <div class="row">
@@ -56,22 +133,22 @@
                     </div>
                 </div>
 
-                @if (\Session::has('insert'))
+                @if (\Session::has('insert_right'))
                 <div class="alert alert-success">
-                    {!! \Session::get('insert') !!}
+                    {!! \Session::get('insert_right') !!}
                 </div>
                 @endif
 
-                @if (\Session::has('del_msg'))
+                @if (\Session::has('del_msg_right'))
                 <div class="alert alert-success">
-                    {!! \Session::get('del_msg') !!}
+                    {!! \Session::get('del_msg_right') !!}
                 </div>
                 @endif
 
 
-                @if (\Session::has('update'))
+                @if (\Session::has('update_right'))
                 <div class="alert alert-success">
-                    {!! \Session::get('update') !!}
+                    {!! \Session::get('update_right') !!}
                 </div>
                 @endif
                 <div class="col-md-12 table-responsive">
@@ -88,18 +165,18 @@
                             @php
                             $i = 0
                             @endphp
-                            @foreach($data as $val)
+                            @foreach($right_links as $right_links)
                             <tr>
                                 <td>{{++$i}}</td>
-                                <td>{{$val->name}}</td>
-                                <td>{{$val->link}}</td>
+                                <td>{{$right_links->name}}</td>
+                                <td>{{$right_links->link}}</td>
                                 <td>
-                                    <a href="{{route('right_footer.edit',['id'=>$val->id])}}">
+                                    <a href="{{route('right_footer.edit',['id'=>$right_links->id])}}">
                                         <button class="btn btn-secondary btn-icon-text"><i
                                                 class='fa fa-edit'></i></button>
                                     </a>
                                     ||
-                                    <a href="{{route('right_footer.delete',['id'=>$val->id])}}"
+                                    <a href="{{route('right_footer.delete',['id'=>$right_links->id])}}"
                                         onClick="return confirm('Are you sure want to delete this recored?')">
                                         <button class="btn btn-danger btn-icon-text"><i
                                                 class='fa fa-trash'></i></button>

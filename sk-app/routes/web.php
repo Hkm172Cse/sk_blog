@@ -12,6 +12,8 @@ use App\Http\Controllers\back_end\touchController;
 use App\Http\Controllers\back_end\ftr_leftController;
 use App\Http\Controllers\back_end\ftr_rightController;
 use App\Http\Controllers\back_end\business_overview_controller;
+use App\Http\Controllers\back_end\newsController;
+use App\Http\Controllers\back_end\footerController;
 
 
 
@@ -95,7 +97,7 @@ Route::group(['prefix'=>'get_in_touch', 'middleware'=>'loginCheck'],function(){
 });
 
 Route::group(['prefix'=>'left_footer','middleware'=>'loginCheck'], function(){
-    Route::get('/left', [ftr_leftController::Class, 'index'])->name('left.footer.link')->middleware('prevent-back-history');
+    //Route::get('/left', [ftr_leftController::Class, 'index'])->name('left.footer.link')->middleware('prevent-back-history');
     Route::get('/edit/{id}', [ftr_leftController::Class, 'edit'])->name('left_footer.edit')->middleware('prevent-back-history');
     Route::post('/update', [ftr_leftController::Class, 'update'])->name('left_footer.update')->middleware('prevent-back-history');
     Route::get('/add', [ftr_leftController::Class, 'add'])->name('new.left_footer')->middleware('prevent-back-history');
@@ -104,7 +106,7 @@ Route::group(['prefix'=>'left_footer','middleware'=>'loginCheck'], function(){
 });
 
 Route::group(['prefix'=>'right_footer','middleware'=>'loginCheck'], function(){
-    Route::get('/right', [ftr_rightController::Class, 'index'])->name('right.footer.link')->middleware('prevent-back-history');
+    //Route::get('/right', [ftr_rightController::Class, 'index'])->name('right.footer.link')->middleware('prevent-back-history');
     Route::get('/edit/{id}', [ftr_rightController::Class, 'edit'])->name('right_footer.edit')->middleware('prevent-back-history');
     Route::post('/update', [ftr_rightController::Class, 'update'])->name('right_footer.update')->middleware('prevent-back-history');
     Route::get('/add', [ftr_rightController::Class, 'add'])->name('new.right_footer')->middleware('prevent-back-history');
@@ -112,10 +114,24 @@ Route::group(['prefix'=>'right_footer','middleware'=>'loginCheck'], function(){
     Route::get('/delete/{id}', [ftr_rightController::Class, 'delete'])->name('right_footer.delete')->middleware('prevent-back-history');
 });
 
+Route::group(['prefix'=>'footer', 'middleware'=>'loginCheck'], function(){
+    Route::get('/footer_links', [footerController::Class, 'index'])->name('foote.user.links');
+});
+
+
 Route::group(['prefix'=>'business_overview','middleware'=>'loginCheck'], function(){
     Route::get('/business_overview', [business_overview_controller::Class, 'index'])->name('business.overview')->middleware('prevent-back-history');
     Route::get('/edit/{id}', [business_overview_controller::Class, 'edit'])->name('business_overview.edit')->middleware('prevent-back-history');
     Route::post('/update', [business_overview_controller::Class, 'update'])->name('business_overview.update')->middleware('prevent-back-history');
+});
+
+Route::group(['prefix'=>'news','middleware'=>'loginCheck'], function(){
+    Route::get('/news', [newsController::Class, 'index'])->name('news.content')->middleware('prevent-back-history');
+    Route::get('/edit/{id}', [newsController::Class, 'edit'])->name('news.edit')->middleware('prevent-back-history');
+    Route::post('/update', [newsController::Class, 'update'])->name('news.update')->middleware('prevent-back-history');
+    Route::get('/add', [newsController::Class, 'add'])->name('new_news')->middleware('prevent-back-history');
+    Route::post('/insert',[newsController::Class, 'insert'])->name('insert.news')->middleware('prevent-back-history');
+    Route::get('/delete/{id}', [newsController::Class, 'delete'])->name('news.delete')->middleware('prevent-back-history');
 });
 
 
