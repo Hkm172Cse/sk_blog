@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\aboutPage\partnerController;
+use App\Http\Controllers\checkController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\back_end\banner_controller;
@@ -14,12 +16,28 @@ use App\Http\Controllers\back_end\ftr_rightController;
 use App\Http\Controllers\back_end\business_overview_controller;
 use App\Http\Controllers\back_end\newsController;
 use App\Http\Controllers\back_end\footerController;
+use App\Http\Controllers\aboutPage\aboutBannerController;
+use App\Http\Controllers\aboutPage\about_us_controller;
 
 
 
 Route::get('/', function () {
     return view('dashboard.dashboard');
 })->middleware('loginCheck')->middleware('prevent-back-history');
+
+/*
+Route::get('/abc', function(){
+    return view('check');
+});
+
+
+// Route::post('/check', [checkController::Class, 'insertOne']);
+// Route::post('/check_up', [checkController::Class, 'updateOne']);
+// Route::get('/getImage', [checkController::Class, 'getImage']);
+
+*/
+
+
 
 Route::get('/administrator',[authController::Class,'login_page']);
 Route::get('/login', [authController::Class, 'login']);
@@ -132,6 +150,40 @@ Route::group(['prefix'=>'news','middleware'=>'loginCheck'], function(){
     Route::get('/add', [newsController::Class, 'add'])->name('new_news')->middleware('prevent-back-history');
     Route::post('/insert',[newsController::Class, 'insert'])->name('insert.news')->middleware('prevent-back-history');
     Route::get('/delete/{id}', [newsController::Class, 'delete'])->name('news.delete')->middleware('prevent-back-history');
+});
+
+Route::group(['prefix'=>'about_page'], function(){
+
+    Route::get('/banner',[aboutBannerController::Class, 'index'])->name('about.page.banner')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[aboutBannerController::Class, 'edit'])->name('about.page.banner.edit')->middleware('prevent-back-history');
+    Route::post('/update',[aboutBannerController::Class, 'update'])->name('about_page.banner.update')->middleware('prevent-back-history');
+    Route::get('/add', [aboutBannerController::Class, 'add'])->name('add.about_Page.banner')->middleware('prevent-back-history');
+    Route::post('/insert', [aboutBannerController::Class, 'insert'])->name('about_page.banner.insert')->middleware('prevent-back-history');
+
+});
+
+Route::group(['prefix'=>'about_page_partner'], function(){
+
+    Route::get('/partner',[partnerController::Class, 'index'])->name('about.page.partner')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[partnerController::Class, 'edit'])->name('partner.logo.edit')->middleware('prevent-back-history');
+    Route::post('/update',[partnerController::Class, 'update'])->name('partner.logo.update')->middleware('prevent-back-history');
+    Route::get('/add', [partnerController::Class, 'add'])->name('partner.logo.add')->middleware('prevent-back-history');
+    Route::post('/insert', [partnerController::Class, 'insert'])->name('partner.logo.insert')->middleware('prevent-back-history');
+
+    Route::get('/partner_edit/{id}', [partnerController::Class, 'partner_edit'])->name('partner.edit')->middleware('prevent-back-history');
+    Route::post('/partner_update',[partnerController::Class, 'partner_update'])->name('partner.update')->middleware('prevent-back-history');
+});
+
+Route::group(['prefix'=>'about_page_about_us'], function(){
+
+    Route::get('/about_us',[about_us_controller::Class, 'index'])->name('about.about_us')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[about_us_controller::Class, 'edit'])->name('about_page.aboutus_image.edit')->middleware('prevent-back-history');
+    Route::post('/update',[about_us_controller::Class, 'update'])->name('about_page.aboutus.image.update')->middleware('prevent-back-history');
+    // Route::get('/add', [partnerController::Class, 'add'])->name('partner.logo.add')->middleware('prevent-back-history');
+    // Route::post('/insert', [partnerController::Class, 'insert'])->name('partner.logo.insert')->middleware('prevent-back-history');
+
+    // Route::get('/partner_edit/{id}', [partnerController::Class, 'partner_edit'])->name('partner.edit')->middleware('prevent-back-history');
+    // Route::post('/partner_update',[partnerController::Class, 'partner_update'])->name('partner.update')->middleware('prevent-back-history');
 });
 
 

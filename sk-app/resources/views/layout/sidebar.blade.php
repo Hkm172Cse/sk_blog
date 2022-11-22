@@ -86,6 +86,37 @@
                 </ul>
             </div>
         </li>
+        <!--About page-->
+        <li class="techics-nav-item mt-3">
+            <a class="nav-link" data-toggle="collapse" href="#about_dashboard" aria-expanded="" aria-controls="">
+                <i class="fas fa-list-ul menu-icon"></i>
+                <span class="menu-title">About</span>
+                <i class="fas fa-chevron-down menu-arrow"></i>
+            </a>
+            <div class="collapse" id="about_dashboard">
+                <ul class="nav flex-column sub-menu">
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('about.page.banner')}}">
+                            Banner
+                        </a>
+                    </li>
+
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('about.about_us')}}">
+                            About us
+                        </a>
+                    </li>
+
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('about.page.partner')}}">
+                            Partner
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <!--Footer-->
 
         <li class="techics-nav-item mt-3">
             <a class="nav-link" data-toggle="collapse" href="#dashboard" aria-expanded="" aria-controls="">
