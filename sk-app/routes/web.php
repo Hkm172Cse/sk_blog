@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\aboutPage\partnerController;
-use App\Http\Controllers\checkController;
+use App\Http\Controllers\Client\clientBannerController;
+use App\Http\Controllers\Client\clientListController;
+use App\Http\Controllers\Client\clientTextController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\back_end\banner_controller;
@@ -18,25 +20,17 @@ use App\Http\Controllers\back_end\newsController;
 use App\Http\Controllers\back_end\footerController;
 use App\Http\Controllers\aboutPage\aboutBannerController;
 use App\Http\Controllers\aboutPage\about_us_controller;
-
+use App\Http\Controllers\aboutPage\know_aboutus_contentController;
+use App\Http\Controllers\community\communityBannerController;
+use App\Http\Controllers\community\know_community_controller;
+use App\Http\Controllers\Portfolio\bannerPortfolioController;
+use App\Http\Controllers\Portfolio\activeController;
+use App\Http\Controllers\Portfolio\upcomingPortflioController;
 
 
 Route::get('/', function () {
     return view('dashboard.dashboard');
 })->middleware('loginCheck')->middleware('prevent-back-history');
-
-/*
-Route::get('/abc', function(){
-    return view('check');
-});
-
-
-// Route::post('/check', [checkController::Class, 'insertOne']);
-// Route::post('/check_up', [checkController::Class, 'updateOne']);
-// Route::get('/getImage', [checkController::Class, 'getImage']);
-
-*/
-
 
 
 Route::get('/administrator',[authController::Class,'login_page']);
@@ -186,9 +180,110 @@ Route::group(['prefix'=>'about_page_about_us'], function(){
     // Route::post('/partner_update',[partnerController::Class, 'partner_update'])->name('partner.update')->middleware('prevent-back-history');
 });
 
+Route::group(['prefix'=>'about_page_aboutus_know'], function(){
+
+    Route::get('/know_aboutus',[know_aboutus_contentController::Class, 'index'])->name('know.about.us')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[know_aboutus_contentController::Class, 'edit'])->name('aboutus.know.edit')->middleware('prevent-back-history');
+    Route::post('/update',[know_aboutus_contentController::Class, 'update'])->name('know_about_us.update')->middleware('prevent-back-history');
+    Route::get('/add', [know_aboutus_contentController::Class, 'add'])->name('new.know_aboutus')->middleware('prevent-back-history');
+    Route::post('/insert', [know_aboutus_contentController::Class, 'insert'])->name('insert.know.aboutus')->middleware('prevent-back-history');
+
+    Route::get('/aboutKnow_heading_edit/{id}', [know_aboutus_contentController::Class, 'aboutKnow_heading_edit'])->name('heading.edit.know_about')->middleware('prevent-back-history');
+    Route::post('/aboutKnow_headig_update',[know_aboutus_contentController::Class, 'aboutKnow_headig_update'])->name('know_about_us_heading.update')->middleware('prevent-back-history');
+});
+
+Route::group(['prefix'=>'community'], function(){
+
+    Route::get('/banner',[communityBannerController::Class, 'index'])->name('comminuty.page.banner')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[communityBannerController::Class, 'edit'])->name('community.page.banner.edit')->middleware('prevent-back-history');
+    Route::post('/update',[communityBannerController::Class, 'update'])->name('community_page.banner.update')->middleware('prevent-back-history');
+    Route::get('/add', [communityBannerController::Class, 'add'])->name('add.about_Page.banner')->middleware('prevent-back-history');
+    Route::post('/insert', [communityBannerController::Class, 'insert'])->name('about_page.banner.insert')->middleware('prevent-back-history');
+
+});
+
+
+Route::group(['prefix'=>'know_comminuty'], function(){
+
+    Route::get('/know_community',[know_community_controller::Class, 'index'])->name('know.community')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[know_community_controller::Class, 'edit'])->name('community.know.edit')->middleware('prevent-back-history');
+    Route::post('/update',[know_community_controller::Class, 'update'])->name('know_about_us.update')->middleware('prevent-back-history');
+    Route::get('/add', [know_community_controller::Class, 'add'])->name('new.community')->middleware('prevent-back-history');
+    Route::post('/insert', [know_community_controller::Class, 'insert'])->name('insert.know.community')->middleware('prevent-back-history');
+
+    Route::get('/aboutKnow_heading_edit/{id}', [know_community_controller::Class, 'aboutKnow_heading_edit'])->name('heading.edit.know_about')->middleware('prevent-back-history');
+    Route::post('/aboutKnow_headig_update',[know_community_controller::Class, 'aboutKnow_headig_update'])->name('know_about_us_heading.update')->middleware('prevent-back-history');
+});
+
+Route::group(['prefix'=>'portfolio_page'], function(){
+
+    Route::get('/banner',[bannerPortfolioController::Class, 'index'])->name('portfolio.page.banner')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[bannerPortfolioController::Class, 'edit'])->name('portfolio.page.banner.edit')->middleware('prevent-back-history');
+    Route::post('/update',[bannerPortfolioController::Class, 'update'])->name('portfolio.banner.update')->middleware('prevent-back-history');
+    //Route::get('/add', [bannerPortfolioController::Class, 'add'])->name('add.about_Page.banner')->middleware('prevent-back-history');
+   //Route::post('/insert', [bannerPortfolioController::Class, 'insert'])->name('about_page.banner.insert')->middleware('prevent-back-history');
+
+});
+
+Route::group(['prefix'=>'portfolio_text'], function(){
+
+    Route::get('/portfolio',[bannerPortfolioController::Class, 'portfolio'])->name('portfolio.page.portfolio')->middleware('prevent-back-history');
+    Route::get('/portfolio_edit/{id}',[bannerPortfolioController::Class, 'portfolio_text_edit'])->name('portfolio.page.portfolio.edit')->middleware('prevent-back-history');
+    Route::post('/update',[bannerPortfolioController::Class, 'portfolio_update'])->name('portfolio.portfolio_text.update')->middleware('prevent-back-history');
+
+    Route::get('/active', [activeController::Class, 'index'])->name('active.portpolio')->middleware('prevent-back-history');
+    Route::get('/active_edit/{id}', [activeController::Class, 'active_edit'])->name('active.portfolio.edit')->middleware('prevent-back-history');
+    Route::post('/active_update', [activeController::Class, 'active_update'])->name('active.portfolio.update')->middleware('prevent-back-history');
+    Route::get('/add', [activeController::Class, 'add'])->name('add.active.portfolio')->middleware('prevent-back-history');
+    Route::post('/insert', [activeController::Class, 'insert'])->name('active.portfolio.insert')->middleware('prevent-back-history');
+    Route::get('/delete/{id}', [activeController::Class, 'delete'])->name('active.portfolio.delete')->middleware('prevent-back-history');
+
+    Route::get('/upcoming', [upcomingPortflioController::Class, 'index'])->name('upcoming.portpolio')->middleware('prevent-back-history');
+    Route::get('/upcoming_edit/{id}', [upcomingPortflioController::Class, 'active_edit'])->name('upcoming.portfolio.edit')->middleware('prevent-back-history');
+    Route::post('/upcoming_update', [upcomingPortflioController::Class, 'upcoming_update'])->name('upcoming.portfolio.update')->middleware('prevent-back-history');
+    Route::get('/add_upcoming', [upcomingPortflioController::Class, 'add'])->name('add.upcoming.portfolio')->middleware('prevent-back-history');
+    Route::post('/insert', [upcomingPortflioController::Class, 'insert'])->name('upcoming.portfolio.insert')->middleware('prevent-back-history');
+    Route::get('/upcoming_delete/{id}', [upcomingPortflioController::Class, 'delete'])->name('upcoming.portfolio.delete')->middleware('prevent-back-history');
+    
+
+});
+
+Route::group(['prefix'=>'client_page'], function(){
+
+    Route::get('/banner',[clientBannerController::Class, 'index'])->name('client.page.banner')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[clientBannerController::Class, 'edit'])->name('client.page.banner.edit')->middleware('prevent-back-history');
+    Route::post('/update',[clientBannerController::Class, 'update'])->name('client_page.banner.update')->middleware('prevent-back-history');
+    Route::get('/add', [clientBannerController::Class, 'add'])->name('add.about_Page.banner')->middleware('prevent-back-history');
+    Route::post('/insert', [clientBannerController::Class, 'insert'])->name('about_page.banner.insert')->middleware('prevent-back-history');
+
+});
+
+Route::group(['prefix'=>'client_text'], function(){
+
+    Route::get('/text',[clientTextController::Class, 'index'])->name('client.page.text')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[clientTextController::Class, 'edit'])->name('client.page.text.edit')->middleware('prevent-back-history');
+    Route::post('/update',[clientTextController::Class, 'update'])->name('client_page.text.update')->middleware('prevent-back-history');
+    Route::get('/add', [clientTextController::Class, 'add'])->name('add.about_Page.banner')->middleware('prevent-back-history');
+    Route::post('/insert', [clientTextController::Class, 'insert'])->name('about_page.banner.insert')->middleware('prevent-back-history');
+
+});
+
+Route::group(['prefix'=>'client_list'], function(){
+
+    Route::get('/index',[clientListController::Class, 'index'])->name('client.list')->middleware('prevent-back-history');
+    Route::get('/edit/{id}',[clientListController::Class, 'edit'])->name('client.list.edit')->middleware('prevent-back-history');
+    Route::post('/update',[clientListController::Class, 'update'])->name('client.list.update')->middleware('prevent-back-history');
+    Route::get('/add', [clientListController::Class, 'add'])->name('add.client.client_list')->middleware('prevent-back-history');
+    Route::post('/insert', [clientListController::Class, 'insert'])->name('new.client.insert')->middleware('prevent-back-history');
+    Route::get('/delete/{id}', [clientListController::Class, 'delete'])->name('client.list.delete')->middleware('prevent-back-history');
+
+});
 
 
 
 
-// password reset link = https://www.youtube.com/watch?v=SuIQ20H-hc4
+
+
+// password reset link = https://www.youtube.com/watch?v=SuIQ20H-hc4  
 // after login browser back_button = https://www.itsolutionstuff.com/post/laravel-5-how-to-prevent-browser-back-button-after-user-logoutexample.html
+// background set = style="background-image:url({{asset('images/about/'.$val->image)}}); background-size:cover; background-position:center"

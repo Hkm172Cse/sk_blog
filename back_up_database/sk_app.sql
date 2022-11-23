@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2022 at 07:54 AM
+-- Generation Time: Nov 23, 2022 at 01:49 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -162,6 +162,88 @@ INSERT INTO `case_content` (`id`, `image`, `title`, `sort_title`, `link`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `client_banner`
+--
+
+CREATE TABLE `client_banner` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `button` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `client_banner`
+--
+
+INSERT INTO `client_banner` (`id`, `name`, `title`, `button`, `image`) VALUES
+(1, 'asdf asdf', 'asdf', 'asdf', 'asdf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `client_list`
+--
+
+CREATE TABLE `client_list` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `client_list`
+--
+
+INSERT INTO `client_list` (`id`, `name`, `title`, `image`) VALUES
+(2, 'ariana apa', 'CEO', '1669207172-blog-icon2.png'),
+(3, 'jone andry', 'This is our Company director', '1669207594-brian-img.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `client_text`
+--
+
+CREATE TABLE `client_text` (
+  `id` int(11) NOT NULL,
+  `image` varchar(200) NOT NULL,
+  `des` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `client_text`
+--
+
+INSERT INTO `client_text` (`id`, `image`, `des`) VALUES
+(1, '1669204638-blog-icon2.png', 'At SK Associates, we believe that trust is an important factor in successful business relationship. This page shows some of the people we have worked with, who represents some of the worlds most successful organisations.\r\n\r\nWe have principles and rules that govern our behaviours and our qualities as individuals ensure we are here to provide the right solution to your requirements. Despite being a diverse business, our values help us create a unified image of our Group through consistent delivery of services.\r\n\r\nWith every business there is a story behind its success. At SK-Associates we still have mileage left to get to where we would like to. However, from 2006 we have been developing and engaging with our clients making sure we learn and gain experience each day. As a consultancy business our services span throughout the world.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `community_banner`
+--
+
+CREATE TABLE `community_banner` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `button` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `community_banner`
+--
+
+INSERT INTO `community_banner` (`id`, `name`, `title`, `button`, `image`) VALUES
+(1, 'a', 'b', 'c', 'sdfasdf');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `footer_left`
 --
 
@@ -198,6 +280,74 @@ CREATE TABLE `footer_right` (
 INSERT INTO `footer_right` (`id`, `name`, `link`) VALUES
 (3, 'name two right', 'Link one right'),
 (4, 'name four', 'name four');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `know_aboutus_content`
+--
+
+CREATE TABLE `know_aboutus_content` (
+  `id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `image_title` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `comments` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `des` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `know_aboutus_content`
+--
+
+INSERT INTO `know_aboutus_content` (`id`, `image`, `image_title`, `date`, `comments`, `title`, `des`) VALUES
+(1, '1669104685-background-one.webp', 'How we are velevering', '2022-11-25', 25, 'How we are delevering   h', 'We always work to ensure that we can provide benefit to our clients by combining the highest standards of legal knowledge with local expertise by maintaining the depth, quality and scale of resources necessary to meet our clients’ needs...'),
+(2, '1669105953-loader.gif', 'sdfds', '2022-11-23', 45, 'fsa', 'Good'),
+(3, '1669106078-loader.gif', 'sdfds', '2022-11-22', 45454, 'sfsd', 'dfgd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `know_about_heading`
+--
+
+CREATE TABLE `know_about_heading` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `des` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `know_about_heading`
+--
+
+INSERT INTO `know_about_heading` (`id`, `title`, `des`) VALUES
+(1, 'Know About SK-Associates', 'Here you will find useful information about our company and the services we provide to our clients. Our ambition is to become one of the leading consultancies in today\'s market. We are committed to helping our clients achieve their goals by providing commercially focused advice of the highest quality that will consistently exceed their expectations. We ensure we can provide benefit to our clients by combining the highest standards of business and law with local excellence of service and by maintaining the depth, quality and scale of resources necessary to meet our clients’ needs whenever and wherever they arise.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `know_community_content`
+--
+
+CREATE TABLE `know_community_content` (
+  `id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `image_title` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `comments` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `des` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `know_community_content`
+--
+
+INSERT INTO `know_community_content` (`id`, `image`, `image_title`, `date`, `comments`, `title`, `des`) VALUES
+(1, '1669177399-brian-img.jpg', 'bb', '2022-11-22', 'd', 'ec', 'f'),
+(2, '1669178467-blog-img.jpg', 'image title', '2022-11-22', '45', 'title', 'des');
 
 -- --------------------------------------------------------
 
@@ -249,6 +399,64 @@ CREATE TABLE `password_reset` (
   `token` varchar(255) NOT NULL,
   `created_at` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `portfolio_active`
+--
+
+CREATE TABLE `portfolio_active` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `portfolio_active`
+--
+
+INSERT INTO `portfolio_active` (`id`, `name`) VALUES
+(1, '<p><a href=\"www.facebook.com\">www.facebook.com</a></p>');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `portfolio_banner`
+--
+
+CREATE TABLE `portfolio_banner` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `button` varchar(60) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `portfolio_banner`
+--
+
+INSERT INTO `portfolio_banner` (`id`, `name`, `title`, `button`, `image`) VALUES
+(1, 'PortFolio', 'You can take note as we have provided of our businesses.', 'See more', '1669181947-blog-icon3.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `portfolio_text`
+--
+
+CREATE TABLE `portfolio_text` (
+  `id` int(11) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `des` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `portfolio_text`
+--
+
+INSERT INTO `portfolio_text` (`id`, `title`, `des`) VALUES
+(1, 'Portfolio Text', 'You can take note as we have provided of our businesses. Copy the link and paste in to your URL field and find out more about our services. SK Associates is committed to its growing brand and our delivery to success. We continue to grow our group of businesses to support our core delivery.\r\n\r\nHere you will find more information on the services we provide and how we can support both individuals and organisations through Legal, HR Management and IT. On the right hand side, there are links to our websites, which will have detailed information of the services provided. Should you require specific support, please visit the appropriate website and get in contact with us or alternatively please use our support form to contact us.\r\n\r\nShould you require further information, please use our support form..');
 
 -- --------------------------------------------------------
 
@@ -440,6 +648,26 @@ INSERT INTO `table_service` (`id`, `section`, `title`, `des`, `service_btn`, `im
 (1, 'What we doooo', 'Service we provide', 'Quis autem vel eum iure repren\r\nderit qui in ea voluptate velit as\r\nse ruam nihil molestiae....', 'get started', '1668830748-logo.svg', 'Tech_legal', 'Quis autem vel eum iure reprenderit qui in ea voluptate velit asse ruam nihil molestiae....'),
 (2, 'What we doooo', 'asdf', 'sfdsa', 'asdfa', '1668680832-background-three.webp', 'sdf', 'sdfds');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `upcoming_portfolio`
+--
+
+CREATE TABLE `upcoming_portfolio` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `upcoming_portfolio`
+--
+
+INSERT INTO `upcoming_portfolio` (`id`, `name`) VALUES
+(1, '<p><a href=\"www.facebook.com\">www.facebook.com</a></p>'),
+(2, '<p>https://cake-maker-2c0ff.web.app/<a href=\"https://cake-maker-2c0ff.web.app/\">https://cake-maker-2c0ff.web.app/</a></p>'),
+(3, '<p><a href=\"https://lucky-brigadeiros-0fbe66.netlify.app\">https://lucky-brigadeiros-0fbe66.netlify.app</a></p>');
+
 --
 -- Indexes for dumped tables
 --
@@ -481,6 +709,30 @@ ALTER TABLE `case_content`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `client_banner`
+--
+ALTER TABLE `client_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `client_list`
+--
+ALTER TABLE `client_list`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `client_text`
+--
+ALTER TABLE `client_text`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `community_banner`
+--
+ALTER TABLE `community_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `footer_left`
 --
 ALTER TABLE `footer_left`
@@ -490,6 +742,24 @@ ALTER TABLE `footer_left`
 -- Indexes for table `footer_right`
 --
 ALTER TABLE `footer_right`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `know_aboutus_content`
+--
+ALTER TABLE `know_aboutus_content`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `know_about_heading`
+--
+ALTER TABLE `know_about_heading`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `know_community_content`
+--
+ALTER TABLE `know_community_content`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -508,6 +778,24 @@ ALTER TABLE `partner_logo`
 -- Indexes for table `password_reset`
 --
 ALTER TABLE `password_reset`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `portfolio_active`
+--
+ALTER TABLE `portfolio_active`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `portfolio_banner`
+--
+ALTER TABLE `portfolio_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `portfolio_text`
+--
+ALTER TABLE `portfolio_text`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -559,6 +847,12 @@ ALTER TABLE `table_service`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `upcoming_portfolio`
+--
+ALTER TABLE `upcoming_portfolio`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -599,6 +893,30 @@ ALTER TABLE `case_content`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `client_banner`
+--
+ALTER TABLE `client_banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `client_list`
+--
+ALTER TABLE `client_list`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `client_text`
+--
+ALTER TABLE `client_text`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `community_banner`
+--
+ALTER TABLE `community_banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `footer_left`
 --
 ALTER TABLE `footer_left`
@@ -609,6 +927,24 @@ ALTER TABLE `footer_left`
 --
 ALTER TABLE `footer_right`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `know_aboutus_content`
+--
+ALTER TABLE `know_aboutus_content`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `know_about_heading`
+--
+ALTER TABLE `know_about_heading`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `know_community_content`
+--
+ALTER TABLE `know_community_content`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `partner`
@@ -627,6 +963,24 @@ ALTER TABLE `partner_logo`
 --
 ALTER TABLE `password_reset`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `portfolio_active`
+--
+ALTER TABLE `portfolio_active`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `portfolio_banner`
+--
+ALTER TABLE `portfolio_banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `portfolio_text`
+--
+ALTER TABLE `portfolio_text`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `review`
@@ -675,6 +1029,12 @@ ALTER TABLE `table_news`
 --
 ALTER TABLE `table_service`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `upcoming_portfolio`
+--
+ALTER TABLE `upcoming_portfolio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

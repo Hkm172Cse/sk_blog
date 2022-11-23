@@ -15,6 +15,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/35.3.1/classic/ckeditor.js"></script>
 <script src="{{asset('js/mask.min.js')}}"></script>
 <script src="{{asset('js/dropify.min.js')}}"></script>
 <script src="{{asset('js/select2.min.js')}}"></script>
@@ -25,6 +26,13 @@
 
 
 <script>
+    // Text editor code 
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+     } );
+    // Text editor code
     
     $(".status").on("click", function(){
         let st = $(this).html();
