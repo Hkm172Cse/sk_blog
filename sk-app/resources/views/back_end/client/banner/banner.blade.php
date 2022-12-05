@@ -44,10 +44,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="card-title">Page Title</h4>
+                        <h4 class="card-title">Client Page</h4>
                     </div>
                     <div class="col-md-6 text-right mb-3">
-                        <a href="{{route('add.about_Page.banner')}}">
+                        <a href="{{route('add.client.banner')}}">
                             <button type="button" class="btn btn-sm btn-outline-orange">
                                 Create
                                 <i class="mdi mdi-play-circle ml-1"></i>

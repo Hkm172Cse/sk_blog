@@ -4,7 +4,7 @@
     <div class="col-md-12 mb-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Edit Data</h4>
+                <h4 class="card-title">Case edit page</h4>
                 @foreach ($errors->all() as $error))
                 <div class="alert alert-danger">
                     {{ $error }}
@@ -16,7 +16,7 @@
                     @foreach($data as $val)
                     <!-- Input Field -->
                     <div class="col-md-12 techics-form-group">
-                        <label for="input_field">Sort Description </label>
+                        <label for="input_field">Name </label>
                         <input type="hidden" name="edit_id" value="{{$val->id}}" />
                         <input type="text" name="title" id="input_field" value="{{$val->title}}"
                             class="form-control" placeholder="Enter Input Field">
@@ -24,7 +24,7 @@
 
                     <!-- Input Field -->
                     <div class="col-md-12 techics-form-group">
-                        <label for="input_field">Sort Description </label>
+                        <label for="input_field">Title</label>
                         <input type="text" name="sort_title" id="input_field" value="{{$val->sort_title}}"
                             class="form-control" placeholder="Enter Input Field">
                     </div>
@@ -51,7 +51,7 @@
 
                     <!--Button one name-->
                     <div class="col-md-6 techics-form-group">
-                        <label for="input_field">Button one name </label>
+                        <label for="input_field">Button Link</label>
 
                         <input type="text" name="link" value="{{$val->link}}" id="input_field"
                             class="form-control" placeholder="button one name">

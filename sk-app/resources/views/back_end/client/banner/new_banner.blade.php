@@ -4,7 +4,7 @@
     <div class="col-md-12 mb-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Edit Data</h4>
+                <h4 class="card-title">Client Banner Insert</h4>
                 @foreach ($errors->all() as $error)
                 <div class="page-error-popup-box">
                     <li class="page-error-pop-up">
@@ -13,7 +13,7 @@
                 </div>
                 @endforeach
 
-                <form action="{{route('about_page.banner.insert')}}" class="row mt-2" method="post" enctype="multipart/form-data">
+                <form action="{{route('client.page.banner.insert')}}" class="row mt-2" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <!-- Name Field -->

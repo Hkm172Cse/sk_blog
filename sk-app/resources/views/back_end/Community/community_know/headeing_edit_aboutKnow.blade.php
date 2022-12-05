@@ -11,7 +11,7 @@
                 </div>
                 @endforeach
 
-                <form action="{{route('know_about_us_heading.update')}}" class="row mt-2" method="post" enctype="multipart/form-data">
+                <form action="{{route('know_community_heading.update')}}" class="row mt-2" method="post" enctype="multipart/form-data">
                     @csrf
                     @foreach($data as $val)
 

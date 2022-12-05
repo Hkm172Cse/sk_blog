@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2022 at 01:49 PM
+-- Generation Time: Dec 05, 2022 at 07:59 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -39,7 +39,7 @@ CREATE TABLE `about_aboutus_img` (
 --
 
 INSERT INTO `about_aboutus_img` (`id`, `image_one`, `image_two`, `image_three`) VALUES
-(1, '1669036183-loader.gif', '1669036235-logo-mini.svg', '1669035689-logo-mini.svg');
+(1, '1669789401-about-us-sec-img.jpg', '1669789401-about-discussion-img.jpg', '1669789401-about-presentation-img.jpg');
 
 -- --------------------------------------------------------
 
@@ -59,7 +59,7 @@ CREATE TABLE `about_aboutus_text` (
 --
 
 INSERT INTO `about_aboutus_text` (`id`, `name`, `title`, `des`) VALUES
-(1, 'About us', 'We’re all About To Helping You', 'SK-Associates began its journey from 2006, started by a team of professionals from Legal (ICS Legal) to IT (TechICS).It is our sheer dedication where we have worked collectively as a team to bring success. We have focussed on the legal and IT sectors which are the heart of our business.');
+(1, 'About us', 'We’re all About To Helping You.', 'SK-Associates began its journey from 2006, started by a team of professionals from Legal (ICS Legal) to IT (TechICS). It is our sheer \r\n\r\ndedication where we have worked collectively as a team tobring success. We have focussed on the legal and IT sectors which are the heart of our business.');
 
 -- --------------------------------------------------------
 
@@ -80,8 +80,7 @@ CREATE TABLE `about_banner` (
 --
 
 INSERT INTO `about_banner` (`id`, `name`, `title`, `button`, `image`) VALUES
-(1, 'about banner page', 'this banner page title', 'more link link', '1669009881-background-two.webp'),
-(2, 'new about banner', 'this about banner title', 'see - more', '1669010705-loader.gif');
+(1, 'About Us', 'Ruis aute irure dolor in reprehenderit in voluptate velit cillum\r\nnulla pariatur nostrud exercitation.', 'About', '1669009881-background-two.webp');
 
 -- --------------------------------------------------------
 
@@ -103,13 +102,7 @@ CREATE TABLE `business` (
 --
 
 INSERT INTO `business` (`id`, `title`, `sort_des`, `button_one`, `button_two`, `image`) VALUES
-(2, 'asfdsaf', 'sdfsf', 'sdfasf', 'sdfadf', '1668686598-card-bg.jpg'),
-(3, 'asfdsaf', 'sdfsf', 'sdfasf', 'sdfadf', '1668686726-loader.gif'),
-(4, 'asfdsaf', 'sdfsf', 'sdfasf', 'sdfadf', '1668686745-Unign.png'),
-(6, 'sfdsdf', 'sdfds', 'sdfs', 'sdfsdf', '1668831031-favicon.ico'),
-(7, 'asfdsaf', 'sdfsf', 'sdfasf', 'sdfadf', '1668689033-face.jpg'),
-(8, 'asfdsaf', 'sdfsf', 'sdfasf', 'sdfadf', '1668830646-background-one.webp'),
-(9, 'asfdsaf', 'sdfsf', 'sdfasf', 'sdfadf', '1668830673-logo-mini.svg');
+(2, 'Improve & Innovate\r\nBusiness Trends', 'Duis aute irure dolor in reprehenderit in voluptate velit cillum nulla pariatur\r\nnostrud exercitation.', 'Get start', 'Learn more', '1668686598-card-bg.jpg');
 
 -- --------------------------------------------------------
 
@@ -119,14 +112,14 @@ INSERT INTO `business` (`id`, `title`, `sort_des`, `button_one`, `button_two`, `
 
 CREATE TABLE `business_overview` (
   `id` int(11) NOT NULL,
-  `project` varchar(255) NOT NULL,
-  `project_num` varchar(255) NOT NULL,
+  `project` varchar(200) NOT NULL,
+  `project_num` int(11) NOT NULL,
   `customer` varchar(255) NOT NULL,
-  `customer_num` varchar(255) NOT NULL,
+  `customer_num` int(11) NOT NULL,
   `data` varchar(255) NOT NULL,
-  `data_num` varchar(255) NOT NULL,
+  `data_num` int(11) NOT NULL,
   `class_base` varchar(255) NOT NULL,
-  `class_base_num` varchar(255) NOT NULL
+  `class_base_num` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -134,7 +127,7 @@ CREATE TABLE `business_overview` (
 --
 
 INSERT INTO `business_overview` (`id`, `project`, `project_num`, `customer`, `customer_num`, `data`, `data_num`, `class_base`, `class_base_num`) VALUES
-(1, 'project Done', '200', 'Customer Satisfication', '100%', 'Data Analyst Input', '600', 'World Class Base', '10+');
+(1, 'Project', 200, 'Customer Satisfication', 100, 'Data Analyst Input', 600, 'World Class Base', 10);
 
 -- --------------------------------------------------------
 
@@ -155,9 +148,13 @@ CREATE TABLE `case_content` (
 --
 
 INSERT INTO `case_content` (`id`, `image`, `title`, `sort_title`, `link`) VALUES
-(1, '1668834663-loader.gif', 'business study', 'finance', 'link'),
-(2, '1668836624-techics-logo.png', 'case study one', 'two', 'sdfafd'),
-(5, '1668837149-logo-mini.svg', 'case one', 'case one title', 'https://www.facebook.com');
+(1, '1669783102-case-report1-img.jpg', 'Business, Finance', 'Financial Report 2019', 'link'),
+(2, '1669783152-case-report2-img.jpg', 'Business, Finance', 'Financial Report 201', 'sdfafd'),
+(5, '1669783177-case-report3-img.jpg', 'Financial Report 201', 'Financial Report 201', 'https://www.facebook.com'),
+(6, '1669783199-case-report4-img.jpg', 'Financial Report 201', 'Financial Report 201', 'https://www.facebook.com'),
+(7, '1669783220-case-report5-img.jpg', 'Financial Report 201', 'Financial Report 201', 'https://www.facebook.com'),
+(8, '1669783243-case-report6-img.jpg', 'Financial Report 201', 'Financial Report 201', 'https://www.facebook.com'),
+(9, '1669784415-case-report1-img.jpg', 'Financial Report 201', 'Financial Report 201', 'https://www.facebook.com');
 
 -- --------------------------------------------------------
 
@@ -178,7 +175,9 @@ CREATE TABLE `client_banner` (
 --
 
 INSERT INTO `client_banner` (`id`, `name`, `title`, `button`, `image`) VALUES
-(1, 'asdf asdf', 'asdf', 'asdf', 'asdf');
+(1, 'Our Clients', 'Clients make us who we are today. So we thank you for being part of this great journey.', 'Client', '1669209055-blog-icon2.png'),
+(2, 'Get in Touch two', 'sfdasf', 'Send message', '1670063575-about-sec-img.jpg'),
+(3, 'Clients', 'Clients make us who we are today. So we thank you for being part of this great journey.', 'Clients', '1670063825-about-discussion-img.jpg');
 
 -- --------------------------------------------------------
 
@@ -198,8 +197,10 @@ CREATE TABLE `client_list` (
 --
 
 INSERT INTO `client_list` (`id`, `name`, `title`, `image`) VALUES
-(2, 'ariana apa', 'CEO', '1669207172-blog-icon2.png'),
-(3, 'jone andry', 'This is our Company director', '1669207594-brian-img.jpg');
+(2, 'Ritz London', 'The world\'s greatest hotel, as conceived by the world\'s greatest hotelier.', '1669887688-blog-icon3.png'),
+(3, 'Orange', 'This is our Company director', '1669887663-blog-icon1.png'),
+(4, 'Deloitte LLP', 'Is the brand where dedicated independent firms throughout the world collaborate to provide audit, consulting, financial advisory, risk management and tax services to selected clients.', '1669887726-blog-icon3.png'),
+(5, 'Wilson James', 'Leading providers of managed security and customer services in the UK.', '1669887844-blog-icon2.png');
 
 -- --------------------------------------------------------
 
@@ -218,7 +219,7 @@ CREATE TABLE `client_text` (
 --
 
 INSERT INTO `client_text` (`id`, `image`, `des`) VALUES
-(1, '1669204638-blog-icon2.png', 'At SK Associates, we believe that trust is an important factor in successful business relationship. This page shows some of the people we have worked with, who represents some of the worlds most successful organisations.\r\n\r\nWe have principles and rules that govern our behaviours and our qualities as individuals ensure we are here to provide the right solution to your requirements. Despite being a diverse business, our values help us create a unified image of our Group through consistent delivery of services.\r\n\r\nWith every business there is a story behind its success. At SK-Associates we still have mileage left to get to where we would like to. However, from 2006 we have been developing and engaging with our clients making sure we learn and gain experience each day. As a consultancy business our services span throughout the world.');
+(1, '1669886532-video-poster.jpg', 'At SK Associates, we believe that trust is an important factor in successful business relationship. This page shows some of the people we have worked with, who represents some of the worlds most successful organisations.\r\n\r\nWe have principles and rules that govern our behaviours and our qualities as individuals ensure we are here to provide the right solution to your requirements. Despite being a diverse business, our values help us create a unified image of our Group through consistent delivery of services.\r\n\r\nWith every business there is a story behind its success. At SK-Associates we still have mileage left to get to where we would like to. However, from 2006 we have been developing and engaging with our clients making sure we learn and gain experience each day. As a consultancy business our services span throughout the world.');
 
 -- --------------------------------------------------------
 
@@ -239,7 +240,34 @@ CREATE TABLE `community_banner` (
 --
 
 INSERT INTO `community_banner` (`id`, `name`, `title`, `button`, `image`) VALUES
-(1, 'a', 'b', 'c', 'sdfasdf');
+(1, 'Community', 'Spreading love and unity keeps us going.Read more about the projects we are involved in.', 'Community', 'sdfasdf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `phone`, `email`, `message`) VALUES
+(1, 'Get in Touch two', '01792268539', 'azizulhakim000111@gmail.com', 'contact with us'),
+(2, 'Get in Touch two', '01792268539', 'azizulhakim000111@gmail.com', 'contact with us'),
+(3, 'Get in Touch two', '01792268539', 'azizulhakim000111@gmail.com', 'get in touch'),
+(4, 'Get in Touch two', '01792268539', 'azizulhakim000111@gmail.com', 'get in touc'),
+(5, 'Get in Touch two', '01792268539', 'azizulhakim000111@gmail.com', 'get in touch'),
+(6, 'Abdul korim', '01792268539', 'abdulkorimseo@gmail.com', 'Contact with us'),
+(7, 'Azizul hakim', '01792268539', 'azizulhakim000111@gmail.com', 'welcome');
 
 -- --------------------------------------------------------
 
@@ -258,8 +286,10 @@ CREATE TABLE `footer_left` (
 --
 
 INSERT INTO `footer_left` (`id`, `name`, `link`) VALUES
-(1, 'Name One left', 'link'),
-(5, 'name 3', 'name 3 left');
+(1, 'News', 'link'),
+(5, 'Video', 'name 3 left'),
+(6, 'Contact us', 'link'),
+(7, 'Case studies', 'name 3 left');
 
 -- --------------------------------------------------------
 
@@ -278,8 +308,10 @@ CREATE TABLE `footer_right` (
 --
 
 INSERT INTO `footer_right` (`id`, `name`, `link`) VALUES
-(3, 'name two right', 'Link one right'),
-(4, 'name four', 'name four');
+(3, 'Faq\'s', 'Link one right'),
+(4, 'Projects', 'name four'),
+(5, 'Mon', 'Link one right'),
+(6, 'Cokkie Notice', 'name four');
 
 -- --------------------------------------------------------
 
@@ -302,9 +334,30 @@ CREATE TABLE `know_aboutus_content` (
 --
 
 INSERT INTO `know_aboutus_content` (`id`, `image`, `image_title`, `date`, `comments`, `title`, `des`) VALUES
-(1, '1669104685-background-one.webp', 'How we are velevering', '2022-11-25', 25, 'How we are delevering   h', 'We always work to ensure that we can provide benefit to our clients by combining the highest standards of legal knowledge with local expertise by maintaining the depth, quality and scale of resources necessary to meet our clients’ needs...'),
-(2, '1669105953-loader.gif', 'sdfds', '2022-11-23', 45, 'fsa', 'Good'),
-(3, '1669106078-loader.gif', 'sdfds', '2022-11-22', 45454, 'sfsd', 'dfgd');
+(1, '1669804371-post-featured4.jpg', 'How we are velevering', '2022-11-25', 25, 'HOW WE ARE DELIVERING', 'We always work to ensure that we can provide benefit to our clients by combining the highest standards of legal knowledge with local expertise by maintaining the depth, quality and scale of resources necessary to meet our clients’ needs...'),
+(2, '1669804398-post-featured3.jpg', 'sdfds', '2022-11-23', 45, 'OUR STATEMENT', 'An ambition to be a trusted business partner to our clients underlines our business strategy. We aim to achieve this goal through sustained investment in managing knowledge and information, and by creating a working culture in...'),
+(3, '1669804420-post-featured2.jpg', 'sdfds', '2022-11-22', 45454, 'WORKING ON THE SECOND DECADE', 'Since 2006 SK-Associates has combined talent and knowledge to provide consultancy services. We have established the companies below...'),
+(4, '1669804449-post-featured.jpg', 'sdfds', '2022-11-22', 45454, 'Site Links', 'SK-Associates is the \"parent\" company of the following businesses. You can click on the following to view more information related to....');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `know_about_commuity`
+--
+
+CREATE TABLE `know_about_commuity` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `des` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `know_about_commuity`
+--
+
+INSERT INTO `know_about_commuity` (`id`, `name`, `title`, `des`) VALUES
+(1, 'Community', 'We’re all About To Helping you', 'Spreading love and unity keeps us going. Read more about the projects we are involved in. Our strength comes from our one Firm approach and our partnership ethos.\r\n\r\nThey underpin our ability to deliver excellent client service and create a working environment where talented people can succeed. We are ambitious for our clients and ourselves but we understand the importance of making a positive impact on the community at large.');
 
 -- --------------------------------------------------------
 
@@ -323,7 +376,7 @@ CREATE TABLE `know_about_heading` (
 --
 
 INSERT INTO `know_about_heading` (`id`, `title`, `des`) VALUES
-(1, 'Know About SK-Associates', 'Here you will find useful information about our company and the services we provide to our clients. Our ambition is to become one of the leading consultancies in today\'s market. We are committed to helping our clients achieve their goals by providing commercially focused advice of the highest quality that will consistently exceed their expectations. We ensure we can provide benefit to our clients by combining the highest standards of business and law with local excellence of service and by maintaining the depth, quality and scale of resources necessary to meet our clients’ needs whenever and wherever they arise.');
+(1, 'About Us', 'Know About SK-Associates');
 
 -- --------------------------------------------------------
 
@@ -346,8 +399,30 @@ CREATE TABLE `know_community_content` (
 --
 
 INSERT INTO `know_community_content` (`id`, `image`, `image_title`, `date`, `comments`, `title`, `des`) VALUES
-(1, '1669177399-brian-img.jpg', 'bb', '2022-11-22', 'd', 'ec', 'f'),
-(2, '1669178467-blog-img.jpg', 'image title', '2022-11-22', '45', 'title', 'des');
+(1, '1669811729-post-featured.jpg', 'How we are velevering', '2022-11-25', '25', 'Helping the environment', 'We believe changing the way you travel to work can reduce climate change effects and local air pollution...'),
+(2, '1669811749-post-featured4.jpg', 'image title', '2022-11-22', '45', 'Charities', 'Some of the charities we have made our donations to and we added some information regarding the charity work..');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `our_staff`
+--
+
+CREATE TABLE `our_staff` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `our_staff`
+--
+
+INSERT INTO `our_staff` (`id`, `name`, `title`, `image`) VALUES
+(1, 'Rayan Collins', 'Consultant', '1669896216-rayan-img.jpg'),
+(2, 'Brian Rooney', 'Advisor', '1669896252-brian-img.jpg'),
+(3, 'Mike', 'Manager', '1669896281-mike-img.jpg');
 
 -- --------------------------------------------------------
 
@@ -366,7 +441,7 @@ CREATE TABLE `partner` (
 --
 
 INSERT INTO `partner` (`id`, `title`, `des`) VALUES
-(1, 'Our Partner team', 'Trusted by World’s Best Companies');
+(1, 'Our Clients', 'Trusted by World’s Best Companies');
 
 -- --------------------------------------------------------
 
@@ -384,8 +459,14 @@ CREATE TABLE `partner_logo` (
 --
 
 INSERT INTO `partner_logo` (`id`, `logo`) VALUES
-(1, '1669014625-loader.gif'),
-(2, '1669015370-card-bg.jpg');
+(1, '1669792676-craft-logo.png'),
+(2, '1669792701-haus-logo.png'),
+(3, '1669792719-hype-logo.png'),
+(4, '1669792737-hyper-logo.png'),
+(5, '1669792756-logo.png'),
+(6, '1669792774-minimum.png'),
+(7, '1669792822-power-logo.png'),
+(8, '1669792847-winner-logo.png');
 
 -- --------------------------------------------------------
 
@@ -408,15 +489,19 @@ CREATE TABLE `password_reset` (
 
 CREATE TABLE `portfolio_active` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `portfolio_active`
 --
 
-INSERT INTO `portfolio_active` (`id`, `name`) VALUES
-(1, '<p><a href=\"www.facebook.com\">www.facebook.com</a></p>');
+INSERT INTO `portfolio_active` (`id`, `name`, `link`) VALUES
+(1, 'ICS Legal', 'https://www.ICS Legal.com'),
+(3, '321 ICS', 'https://www.321 ICS.com'),
+(4, 'Tech ICS', 'https://www.Tech ICS.com'),
+(5, 'Harlsden Residence', 'https://www.Harlsden Residence.com');
 
 -- --------------------------------------------------------
 
@@ -437,7 +522,7 @@ CREATE TABLE `portfolio_banner` (
 --
 
 INSERT INTO `portfolio_banner` (`id`, `name`, `title`, `button`, `image`) VALUES
-(1, 'PortFolio', 'You can take note as we have provided of our businesses.', 'See more', '1669181947-blog-icon3.png');
+(1, 'PortFolio', 'You can take note as we have provided of our businesses.', 'Portfolio', '1669181947-blog-icon3.png');
 
 -- --------------------------------------------------------
 
@@ -477,7 +562,8 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`id`, `image`, `review`, `client_name`, `designation`) VALUES
-(2, '1668849843-tech.png', 'zsa', 'sfdsd', 'sdfsdf');
+(2, '1669784456-slider-left2-img.png', 'Eiusmod tempor incididunt ut labore et dolore magna aliqua rue znim aeu minim veniam, quis\r\n                     nostrud exercitation ullamco laboris nisi ut alirui commodo conseruat aute irure dolor\r\n                     reprehenderit.', 'Kevin Andrew', 'Co-Founder'),
+(4, '1669721628-slider-left1-img.png', 'Eiusmod tempor incididunt ut labore et dolore magna aliqua rue znim  aeu minim veniam, quis\r\n                     nostrud exercitation ullamco laboris nisi ut alirui  commodo conseruat aute irure dolor\r\n                     reprehenderit.', 'Jone Endry', 'Co-Founder');
 
 -- --------------------------------------------------------
 
@@ -500,7 +586,7 @@ CREATE TABLE `table_about_us` (
 --
 
 INSERT INTO `table_about_us` (`id`, `title`, `sort_des`, `des`, `img_one`, `img_two`, `link`) VALUES
-(1, 'What we do', 'Service we provide', 'Quis autem vel eum iure reprenderit qui in ea voluptate velit as se ruam nihil molestiae....', '1668600442-tech.png.png', '1668600433-background-one.webp.webp', 'get started');
+(1, 'About us', 'We have focussed on the legal and IT sectors which are the heart of our business.', 'We have grown to become one of the leading professionals in consultancy services and managing business operations.\r\n\r\nIn such a short space of time we have grasped on to the high level of demand in both industries and have led to become instinctive in decision making, professional on the advice we provide to our clients.', '1670141807-about-sec-img.jpg.jpg', '1670141807-video-poster.jpg.jpg', 'get_started');
 
 -- --------------------------------------------------------
 
@@ -545,10 +631,7 @@ CREATE TABLE `table_banner` (
 --
 
 INSERT INTO `table_banner` (`id`, `sort_des`, `des`, `image`, `btn_one`, `btn_two`, `btn_one_link`, `btn_two_link`) VALUES
-(12, 'Create New Ways to Better Invest', 'Create New Ways to Better Invest', '1668579503-banner.jpg', 'Get Started', 'Learn More', 'https://www.youtube.com', 'https://www.youtube.com'),
-(14, 'Create New Ways to Better Invest', 'Create New Ways to Better Invest', '1668580714-banner.svg', 'Get Started', 'Learn More', 'http://www.facebook.com', 'https://www.youtube.com'),
-(16, 'Create New Ways to Better Invest', 'Create New Ways to Better Invest', '1668830772-banner.gif', 'Get Started', 'Learn More', 'https://www.youtube.com', 'https://www.youtube.com'),
-(18, 'Create New Ways to Better Invest', 'Create New Ways to Better Invest', '1668581948-banner.svg', 'Get Started', 'Learn More', 'http://www.facebook.com', 'https://www.youtube.com');
+(12, 'Create New Ways to Better Invest', 'Duis aute irure dolor in reprehenderit in voluptate velit cillum\r\nnulla pariatur nostrud exercitation.', '1668579503-banner.jpg', 'Get Started', 'Learn More', 'https://www.youtube.com', 'https://www.youtube.com');
 
 -- --------------------------------------------------------
 
@@ -620,8 +703,9 @@ CREATE TABLE `table_news` (
 --
 
 INSERT INTO `table_news` (`id`, `title`, `date`, `news`, `tag`, `image`) VALUES
-(1, 'title', '2022-11-20', 'news soooooooooooooooooooooooooooooooooooon', 'tag', '1668942557-favicon.ico'),
-(2, 'tilte', '2022-11-20', 'news', 'tag', '1668942531-logo-mini.svg');
+(1, 'Law Firm Legal Case Management System introduced by Tech ICS', '2022-11-20', 'Law Firm Legal Case Management System introduced by Tech ICS', 'Jone Williwam', '1669725032-business-growth.jpg'),
+(4, 'Law Firm Legal Case Management System introduced by Tech ICS', '2022-11-20', 'Law Firm Legal Case Management System introduced by Tech ICS', 'David William', '1669725090-blog-img2.jpg'),
+(5, 'Law Firm Legal Case Management System introduced by Tech ICS', '2022-11-20', 'Law Firm Legal Case Management System introduced by Tech ICS', 'David William', '1669725109-blog-img3.jpg');
 
 -- --------------------------------------------------------
 
@@ -645,8 +729,51 @@ CREATE TABLE `table_service` (
 --
 
 INSERT INTO `table_service` (`id`, `section`, `title`, `des`, `service_btn`, `image`, `service_title`, `service_des`) VALUES
-(1, 'What we doooo', 'Service we provide', 'Quis autem vel eum iure repren\r\nderit qui in ea voluptate velit as\r\nse ruam nihil molestiae....', 'get started', '1668830748-logo.svg', 'Tech_legal', 'Quis autem vel eum iure reprenderit qui in ea voluptate velit asse ruam nihil molestiae....'),
-(2, 'What we doooo', 'asdf', 'sfdsa', 'asdfa', '1668680832-background-three.webp', 'sdf', 'sdfds');
+(1, 'What we do', 'Service we provide', 'Quis autem vel eum iure repren\r\nderit qui in ea voluptate velit as\r\nse ruam nihil molestiae....', 'get started', '1668830748-logo.svg', 'Tech_legal', 'Quis autem vel eum iure reprenderit qui in ea voluptate velit asse ruam nihil molestiae....');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `table_service_right`
+--
+
+CREATE TABLE `table_service_right` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `table_service_right`
+--
+
+INSERT INTO `table_service_right` (`id`, `name`, `title`, `link`) VALUES
+(1, 'Tech ICS', 'Rostrud exercitation alia consequatur auor...', 'legal.com'),
+(2, 'ICS Legal', 'Nostrud exercitation alia\r\nconsequatur auor...', 'legal.com'),
+(3, 'ICS Legal', 'Nostrud exercitation alia\r\nconsequatur auor...', 'legal.com'),
+(4, 'ICS Legal', 'Nostrud exercitation alia\r\nconsequatur auor...', 'legal.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `team_banner`
+--
+
+CREATE TABLE `team_banner` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `button` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `team_banner`
+--
+
+INSERT INTO `team_banner` (`id`, `name`, `title`, `image`, `button`) VALUES
+(1, 'our teams', 'Ruis aute irure dolor in reprehenderit in voluptate velit cillumnulla pariatur nostrud exercitation.', '1669891912-about-discussion-img.jpg', 'team');
 
 -- --------------------------------------------------------
 
@@ -656,17 +783,18 @@ INSERT INTO `table_service` (`id`, `section`, `title`, `des`, `service_btn`, `im
 
 CREATE TABLE `upcoming_portfolio` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `upcoming_portfolio`
 --
 
-INSERT INTO `upcoming_portfolio` (`id`, `name`) VALUES
-(1, '<p><a href=\"www.facebook.com\">www.facebook.com</a></p>'),
-(2, '<p>https://cake-maker-2c0ff.web.app/<a href=\"https://cake-maker-2c0ff.web.app/\">https://cake-maker-2c0ff.web.app/</a></p>'),
-(3, '<p><a href=\"https://lucky-brigadeiros-0fbe66.netlify.app\">https://lucky-brigadeiros-0fbe66.netlify.app</a></p>');
+INSERT INTO `upcoming_portfolio` (`id`, `name`, `link`) VALUES
+(1, 'Hamilton Webb', 'www.Hamiltonwebb'),
+(2, 'Jobs Library', 'www.jobslibrary'),
+(3, 'Jobs Library', 'www.jobslibrary');
 
 --
 -- Indexes for dumped tables
@@ -733,6 +861,12 @@ ALTER TABLE `community_banner`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `footer_left`
 --
 ALTER TABLE `footer_left`
@@ -751,6 +885,12 @@ ALTER TABLE `know_aboutus_content`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `know_about_commuity`
+--
+ALTER TABLE `know_about_commuity`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `know_about_heading`
 --
 ALTER TABLE `know_about_heading`
@@ -760,6 +900,12 @@ ALTER TABLE `know_about_heading`
 -- Indexes for table `know_community_content`
 --
 ALTER TABLE `know_community_content`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `our_staff`
+--
+ALTER TABLE `our_staff`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -847,6 +993,18 @@ ALTER TABLE `table_service`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `table_service_right`
+--
+ALTER TABLE `table_service_right`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `team_banner`
+--
+ALTER TABLE `team_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `upcoming_portfolio`
 --
 ALTER TABLE `upcoming_portfolio`
@@ -890,19 +1048,19 @@ ALTER TABLE `business_overview`
 -- AUTO_INCREMENT for table `case_content`
 --
 ALTER TABLE `case_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `client_banner`
 --
 ALTER TABLE `client_banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `client_list`
 --
 ALTER TABLE `client_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `client_text`
@@ -917,22 +1075,34 @@ ALTER TABLE `community_banner`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `footer_left`
 --
 ALTER TABLE `footer_left`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `footer_right`
 --
 ALTER TABLE `footer_right`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `know_aboutus_content`
 --
 ALTER TABLE `know_aboutus_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `know_about_commuity`
+--
+ALTER TABLE `know_about_commuity`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `know_about_heading`
@@ -947,6 +1117,12 @@ ALTER TABLE `know_community_content`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `our_staff`
+--
+ALTER TABLE `our_staff`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `partner`
 --
 ALTER TABLE `partner`
@@ -956,7 +1132,7 @@ ALTER TABLE `partner`
 -- AUTO_INCREMENT for table `partner_logo`
 --
 ALTER TABLE `partner_logo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `password_reset`
@@ -968,7 +1144,7 @@ ALTER TABLE `password_reset`
 -- AUTO_INCREMENT for table `portfolio_active`
 --
 ALTER TABLE `portfolio_active`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `portfolio_banner`
@@ -986,7 +1162,7 @@ ALTER TABLE `portfolio_text`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `table_about_us`
@@ -1022,13 +1198,25 @@ ALTER TABLE `table_get_in_touch`
 -- AUTO_INCREMENT for table `table_news`
 --
 ALTER TABLE `table_news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `table_service`
 --
 ALTER TABLE `table_service`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `table_service_right`
+--
+ALTER TABLE `table_service_right`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `team_banner`
+--
+ALTER TABLE `team_banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `upcoming_portfolio`

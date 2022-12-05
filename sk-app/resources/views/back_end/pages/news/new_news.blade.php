@@ -4,7 +4,7 @@
     <div class="col-md-12 mb-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Add new News Data</h4>
+                <h4 class="card-title">News/blog insert</h4>
                 @foreach ($errors->all() as $error)
                 <div class="alert alert-danger">
                     {{ $error }}

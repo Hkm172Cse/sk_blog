@@ -44,7 +44,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="card-title">Page Title</h4>
+                        <h4 class="card-title">About Page</h4>
                     </div>
                     <div class="col-md-6 text-right mb-3">
                         <a href="{{route('add.about_Page.banner')}}">
@@ -107,7 +107,7 @@
                                 <td>{{$val->name}}</td>
                                 <td>{{substr($val->title, 0, 20)}}</td>
                                 <td>{{$val->button}}</td>
-                                <td><img src="{{asset('images/about/'.$val->image)}}" /></td>
+                                <td><img src="{{asset('images/about_us/'.$val->image)}}" /></td>
                                 <td>
                                     <a href="{{route('about.page.banner.edit',['id'=>$val->id])}}">
                                         <button class="btn btn-secondary btn-icon-text"><i

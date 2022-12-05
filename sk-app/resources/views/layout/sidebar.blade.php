@@ -137,16 +137,16 @@
                     </li>
 
                     <li class="techics-nav-item">
-                        <a class="nav-link" href="{{route('about.about_us')}}">
-                            About us
+                        <a class="nav-link" href="{{route('about.of.community')}}">
+                            About Community
                         </a>
                     </li>
 
-                    <li class="techics-nav-item">
+                    <!--li class="techics-nav-item">
                         <a class="nav-link" href="{{route('about.page.partner')}}">
                             Partner
                         </a>
-                    </li>
+                    </li-->
                     <li class="techics-nav-item">
                         <a class="nav-link" href="{{route('know.community')}}">
                             know community
@@ -207,6 +207,35 @@
                     <li class="techics-nav-item">
                         <a class="nav-link" href="{{route('client.page.text')}}">
                             Client Text
+                        </a>
+                    </li>
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('client.list')}}">
+                            Client List
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </li>
+
+        <!--Team-->
+        <li class="techics-nav-item mt-3">
+            <a class="nav-link" data-toggle="collapse" href="#team_dashboard" aria-expanded="" aria-controls="">
+                <i class="fas fa-list-ul menu-icon"></i>
+                <span class="menu-title">Team</span>
+                <i class="fas fa-chevron-down menu-arrow"></i>
+            </a>
+            <div class="collapse" id="team_dashboard">
+                <ul class="nav flex-column sub-menu">
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('team.banner')}}">
+                            Baneer
+                        </a>
+                    </li>
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('team.page.staff')}}">
+                            Staff
                         </a>
                     </li>
                     <li class="techics-nav-item">

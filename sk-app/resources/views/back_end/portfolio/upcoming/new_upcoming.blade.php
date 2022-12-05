@@ -4,7 +4,7 @@
     <div class="col-md-12 mb-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">About page banner edit</h4>
+                <h4 class="card-title">upcommig portfolio insert</h4>
                 @foreach ($errors->all() as $error))
                 <div class="alert alert-danger">
                     {{ $error }}
@@ -18,7 +18,7 @@
                      <!-- Textarea -->
                    <div class="col-md-12 techics-form-group">
                         <label for="textarea">Portfolio</label>
-                        <textarea id="editor" class="form-control" name="name" id="textarea" cols="30"
+                        <textarea id="editor" class="form-control" row="4" name="name" id="textarea" cols="30"
                             rows="10"></textarea>
                             
                     </div>

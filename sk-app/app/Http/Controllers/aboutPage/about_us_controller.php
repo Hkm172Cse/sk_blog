@@ -15,6 +15,23 @@ class about_us_controller extends Controller
         $text_data = aboutUsTextModel::all();
         return view('back_end.about.aboutUs.aboutUs', ['image_data' => $image_data, 'text_data'=>$text_data]);
     }
+    public function text_edit($id){
+        $data = aboutUsTextModel::where('id',$id)->get();
+        return view('back_end.about.aboutUs.about_us_text_edit', ['data'=>$data]);
+    }
+
+    public function text_update(Request $req){
+        $id = $req->input('edit_id');
+        $result = aboutUsTextModel::where('id',$id)->update([
+            'name'=>$req->name,
+            'title'=>$req->title,
+            'des'=>$req->des
+        ]);
+
+        if($result){
+            return redirect(route('about.about_us'))->with('update_text','updated successful');
+        }
+    }
     public function edit($id)
     {
         $data = aboutUsModel::where('id', '=', $id)->get();

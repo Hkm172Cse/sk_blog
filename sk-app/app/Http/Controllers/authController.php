@@ -98,5 +98,9 @@ class authController extends Controller
         return redirect('/administrator')->with('pass_rst', 'Your password is updated. you can login now');
        }
     }
+
+    public function dashboard(){
+        return view('dashboard.dashboard');
+    }
 }
  

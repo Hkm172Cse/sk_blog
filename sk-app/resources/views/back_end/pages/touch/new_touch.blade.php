@@ -4,7 +4,7 @@
     <div class="col-md-12 mb-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Edit Data</h4>
+                <h4 class="card-title">New Contact Form</h4>
                 @foreach ($errors->all() as $error)
                 <div class="pop-up-box alert-success">
                     <li class="pop-up">

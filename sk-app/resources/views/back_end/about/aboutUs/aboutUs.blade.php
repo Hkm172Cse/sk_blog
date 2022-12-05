@@ -44,10 +44,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="card-title">Footer Left Side</h4>
+                        <h4 class="card-title">About us page Images</h4>
                     </div>
                     <div class="col-md-6 text-right mb-3">
-                        <a href="{{route('partner.logo.add')}}">
+                        <a href="#">
                             <button type="button" class="btn btn-sm btn-outline-orange">
                                 Create
                                 <i class="mdi mdi-play-circle ml-1"></i>
@@ -123,10 +123,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="card-title">Page Title</h4>
+                        <h4 class="card-title">About us page text</h4>
                     </div>
                     <div class="col-md-6 text-right mb-3">
-                        <a href="{{route('new.right_footer')}}">
+                        <a href="#">
                             <button type="button" class="btn btn-sm btn-outline-orange">
                                 Create
                                 <i class="mdi mdi-play-circle ml-1"></i>
@@ -148,9 +148,9 @@
                 @endif
 
 
-                @if (\Session::has('update_partner'))
+                @if (\Session::has('update_text'))
                 <div class="alert alert-success">
-                    {!! \Session::get('update_partner') !!}
+                    {!! \Session::get('update_text') !!}
                 </div>
                 @endif
                 <div class="col-md-12 table-responsive">
@@ -175,7 +175,7 @@
                                 <td>{{$text_data->title}}</td>
                                 <td>{{substr($text_data->des, 0,20)}}</td>
                                 <td>
-                                    <a href="">
+                                    <a href="{{route('about_page.aboutus_text.edit',['id'=>$text_data->id])}}">
                                         <button class="btn btn-secondary btn-icon-text"><i
                                                 class='fa fa-edit'></i></button>
                                     </a>

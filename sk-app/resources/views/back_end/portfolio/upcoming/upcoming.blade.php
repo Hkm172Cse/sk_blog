@@ -44,7 +44,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="card-title">Page Title</h4>
+                        <h4 class="card-title">Upcomming portfolio</h4>
                     </div>
                     <div class="col-md-6 text-right mb-3">
                         <a href="{{route('add.upcoming.portfolio')}}">

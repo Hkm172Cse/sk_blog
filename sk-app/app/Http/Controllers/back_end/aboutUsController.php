@@ -59,6 +59,7 @@ class aboutUsController extends Controller
     {
 
         $id = $req->input('edit_id');
+       // dd($req->all());
 
 
         if ($req->image_one == null && $req->image_two == null) {

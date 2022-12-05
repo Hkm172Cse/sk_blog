@@ -39,12 +39,12 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="card-title">Page Title</h4>
+                        <h4 class="card-title">Service left section</h4>
                     </div>
                     <div class="col-md-6 text-right mb-3">
                         <a href="{{route('add.service')}}">
@@ -124,6 +124,90 @@
                                         onClick="return confirm('Are you sure want to delete this recored?')">
                                         <button class="btn btn-danger btn-icon-text"><i
                                                 class='fa fa-trash'></i></button>
+                                    </a>
+
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Right Side-->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="card-title">Service right section</h4>
+                    </div>
+                    <div class="col-md-6 text-right mb-3">
+                        <a href="{{route('add.service')}}">
+                            <button type="button" class="btn btn-sm btn-outline-orange">
+                                Create
+                                <i class="mdi mdi-play-circle ml-1"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                @if (\Session::has('new_service'))
+                <div class="page-success-popup-box">
+                    <li class="page-success-pop-up">
+                        {!! \Session::get('new_service') !!}
+                    </li>
+                </div>
+                @endif
+
+                @if (\Session::has('del_msg'))
+                <div class="page-success-popup-box">
+                    <li class="page-success-pop-up">
+                        {!! \Session::get('del_msg') !!}
+                    </li>
+                </div>
+                @endif
+
+
+                @if (\Session::has('update_r_suc'))
+                <div class="pop-up-box alert-success">
+                    <li class="pop-up">
+                        {!! \Session::get('update_r_suc') !!}
+                    </li>
+                </div>
+                @endif
+
+
+
+
+
+                <div class="col-md-12 table-responsive">
+                    <table id="example2" class="table table-striped table-hover table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Sl</th>
+                                <th>Name</th>
+                                <th>title</th>
+                                <th>Link</th>
+                                <th>action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                            $i = 0
+                            @endphp
+                            @foreach($r_data as $r_val)
+                            <tr>
+                                <td>{{++$i}}</td>
+                                <td>{{$r_val->name}}</td>
+                                <td>{{$r_val->title}}</td>
+                                <td>{{$r_val->link}}</td>
+                                <td>
+                                    <a href="{{route('service.edit.r_page',['id'=>$val->id])}}">
+                                        <button class="btn btn-secondary btn-icon-text"><i
+                                                class='fa fa-edit'></i></button>
                                     </a>
 
                                 </td>
