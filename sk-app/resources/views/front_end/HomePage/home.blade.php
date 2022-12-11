@@ -1,4 +1,4 @@
-@extends('front_end.layout.app',['footer_left'=>$footer_left, 'footer_right'=>$footer_right])
+@extends('front_end.layout.app',['title_data'=>$title_data, 'footer_left'=>$footer_left, 'footer_right'=>$footer_right])
 @section('content')
 <!--banner-sec-->
 @include('front_end.HomePage.Banner')

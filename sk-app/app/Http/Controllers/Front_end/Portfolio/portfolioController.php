@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Front_end\Portfolio;
 use App\Http\Controllers\Controller;
 use App\Models\back_end\ftr_left_Model;
 use App\Models\back_end\ftr_right_model;
+use App\Models\back_end\touchModel;
+use App\Models\Meta\portfolioMetaModel;
 use App\Models\portfolio\activeModel;
 use App\Models\portfolio\portfolioBannerModel;
 use App\Models\portfolio\portfolioTextModel;
@@ -20,6 +22,8 @@ class portfolioController extends Controller
         $text = portfolioTextModel::orderby('id','desc')->limit(1)->get();
         $active = activeModel::orderby('id','desc')->limit(4)->get();
         $upcomming = upcomingPortfolio::orderby('id','desc')->limit(4)->get();
+        $title_data = portfolioMetaModel::limit(1)->get();
+        $contact_data = touchModel::where('status', 'active')->get();
         return view('front_end.Portfolio.portfolio',[
             
             'footer_left'=>$left_f,
@@ -27,7 +31,9 @@ class portfolioController extends Controller
             'banner'=>$banner,
             'text'=>$text,
             'active'=>$active,
-            'upcomming'=>$upcomming
+            'upcomming'=>$upcomming,
+            'title_data'=>$title_data,
+            'contact_data'=>$contact_data,
         ]);
     }
 }

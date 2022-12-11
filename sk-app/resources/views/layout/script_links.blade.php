@@ -77,19 +77,40 @@
         
     })
 
-    $("#banner_modal_btn").on("click", function () {
-        let sort_des = $("#sort_des").val();
-        let des = $("#des").val();
-        console.log(sort_des, des);
-        axios.post("/banner/add", { sort_des: sort_des, des: des })
+    $(".viewEmailInfo").on("click", function () {
+        let id = $(this).attr('edit_id');
+        console.log(id);
+        axios.post("/email_info", { id: id})
             .then(function (res) {
-                console.log(res);
-                $("#myModel").modal('hide');
+                console.log(res.data);
+                $("#userName").html(res.data[0].name);
+                $("#phone").html(res.data[0].phone);
+                $("#email").html(res.data[0].email);
+                $("#msg").html(res.data[0].message);
+                $("#subject").html(res.data[0].subject);
+                $("#sendTo").html(res.data[0].email);
+                console.log(res.data[0]);
             })
             .catch(function (error) {
                 console.log(error);
             })
-    })
+    });
+
+
+    $("#send").on("click", function(){
+        let sendTo = $("#sendTo").html();
+        let subject = $("#subject").html();
+        let email = $("#text").val();
+
+        axios.post("/send_to_touch_user",{sendTo:sendTo, subject:subject, email:email})
+        .then(function(res){
+            console.log(res);
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+        console.log(sendTo,subject,email);
+    });
 
     $(document).ready(function () {
         window.setTimeout(function () {

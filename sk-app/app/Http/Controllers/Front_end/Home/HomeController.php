@@ -13,8 +13,10 @@ use App\Models\back_end\newsModel;
 use App\Models\back_end\reviewModel;
 use App\Models\back_end\serviceModel;
 use App\Models\back_end\service_right_section;
-use App\Models\front_end\Home\homeBannerModel;
+use App\Models\back_end\touchModel;
 use App\Models\front_end\contact\contact;
+use App\Models\front_end\Home\homeBannerModel;
+use App\Models\Meta\homeMetaModel;
 use Illuminate\Http\Request;
 
 
@@ -31,6 +33,9 @@ class HomeController extends Controller
         $news = newsModel::limit(3)->get();
         $left_f = ftr_left_Model::limit(4)->get();
         $right_f = ftr_right_model::limit(4)->get();
+        $title_data = homeMetaModel::limit(1)->get();
+        $contact_data = touchModel::where('status', 'active')->get();
+
         $case = caseModel::orderby('id','desc')->limit(6)->get();
         return view('front_end.HomePage.home',[
             'banner'=>$banner,
@@ -43,7 +48,9 @@ class HomeController extends Controller
             'news'=>$news,
             'footer_left'=>$left_f,
             'footer_right'=>$right_f,
-            'case'=>$case
+            'case'=>$case,
+            'title_data'=>$title_data,
+            'contact_data'=>$contact_data,
 
         ]);
     }
@@ -53,11 +60,13 @@ class HomeController extends Controller
             'name'=>$req->name,
             'phone'=>$req->phone,
             'email'=>$req->email,
-            'message'=>$req->message
+            'message'=>$req->message,
+            'subject'=>$req->subject,
+
         ]);
         \Mail::send('front_end.contact.welcome',['body'=>"Welcome"],function($message) use ($req){
             $message->from('noreply@example.com', 'Sk-associates');
-            $message->to($req->email,'Your name')->subject('Tech-ICS');
+            $message->to($req->email,'Your name')->subject($req->subject);
         });
         return back()->withInput();
     }

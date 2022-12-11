@@ -40,6 +40,13 @@
                         <input type="text" name="button" id="input_field" class="form-control"
                             placeholder="Enter Input Field">
                     </div>
+                    <!-- Subject Name -->
+                    <div class="col-md-6 techics-form-group">
+                        <label for="input_field">Subject name</label>
+                        <div class="float-right text-danger">Required</div>
+                        <input type="text" name="subject" id="input_field" class="form-control"
+                            placeholder="Enter Input Field">
+                    </div>
                     
 
 

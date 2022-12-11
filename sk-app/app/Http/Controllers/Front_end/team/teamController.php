@@ -7,6 +7,8 @@ use App\Models\aboutPage\partnerModel;
 use App\Models\aboutPage\partnerTitleModel;
 use App\Models\back_end\ftr_left_Model;
 use App\Models\back_end\ftr_right_model;
+use App\Models\back_end\touchModel;
+use App\Models\Meta\teamMetaModel;
 use App\Models\team\staffModel;
 use App\Models\team\teamBannerModel;
 use Illuminate\Http\Request;
@@ -20,6 +22,8 @@ class teamController extends Controller
         $banner = teamBannerModel::orderby('id','desc')->limit(1)->get();
         $partnerTitle = partnerTitleModel::orderby('id','desc')->limit(1)->get();
         $logo = partnerModel::orderby('id','desc')->limit(8)->get();
+        $title_data = teamMetaModel::limit(1)->get();
+        $contact_data = touchModel::where('status', 'active')->get();
         return view('front_end.Team.team',[
             'footer_left'=>$left_f,
             'footer_right'=>$right_f,
@@ -27,6 +31,8 @@ class teamController extends Controller
             'staff'=>$staff,
             'partinerTitle'=>$partnerTitle,
             'logo'=>$logo,
+            'title_data'=>$title_data,
+            'contact_data'=>$contact_data,
         ]);
     }
 }

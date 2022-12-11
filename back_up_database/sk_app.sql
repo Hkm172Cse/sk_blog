@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2022 at 07:59 AM
+-- Generation Time: Dec 11, 2022 at 11:38 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `sk_app`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aboutus_meta`
+--
+
+CREATE TABLE `aboutus_meta` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `des` varchar(255) NOT NULL,
+  `tag` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `aboutus_meta`
+--
+
+INSERT INTO `aboutus_meta` (`id`, `title`, `des`, `tag`) VALUES
+(1, 'about us  title', 'about page meta', 'about tag');
 
 -- --------------------------------------------------------
 
@@ -205,6 +225,26 @@ INSERT INTO `client_list` (`id`, `name`, `title`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `client_meta`
+--
+
+CREATE TABLE `client_meta` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `des` varchar(255) NOT NULL,
+  `tag` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `client_meta`
+--
+
+INSERT INTO `client_meta` (`id`, `title`, `des`, `tag`) VALUES
+(1, 'client Meta', 'Client Meta title', 'client description meta');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `client_text`
 --
 
@@ -245,6 +285,26 @@ INSERT INTO `community_banner` (`id`, `name`, `title`, `button`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `community_meta`
+--
+
+CREATE TABLE `community_meta` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `des` varchar(255) NOT NULL,
+  `tag` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `community_meta`
+--
+
+INSERT INTO `community_meta` (`id`, `title`, `des`, `tag`) VALUES
+(1, 'Community Title', 'Community Description', 'Community Tag');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `contact`
 --
 
@@ -253,21 +313,22 @@ CREATE TABLE `contact` (
   `name` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `message` varchar(255) NOT NULL
+  `message` varchar(255) NOT NULL,
+  `subject` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `contact`
 --
 
-INSERT INTO `contact` (`id`, `name`, `phone`, `email`, `message`) VALUES
-(1, 'Get in Touch two', '01792268539', 'azizulhakim000111@gmail.com', 'contact with us'),
-(2, 'Get in Touch two', '01792268539', 'azizulhakim000111@gmail.com', 'contact with us'),
-(3, 'Get in Touch two', '01792268539', 'azizulhakim000111@gmail.com', 'get in touch'),
-(4, 'Get in Touch two', '01792268539', 'azizulhakim000111@gmail.com', 'get in touc'),
-(5, 'Get in Touch two', '01792268539', 'azizulhakim000111@gmail.com', 'get in touch'),
-(6, 'Abdul korim', '01792268539', 'abdulkorimseo@gmail.com', 'Contact with us'),
-(7, 'Azizul hakim', '01792268539', 'azizulhakim000111@gmail.com', 'welcome');
+INSERT INTO `contact` (`id`, `name`, `phone`, `email`, `message`, `subject`) VALUES
+(3, 'Get in Touch two', '01792268539', 'azizulhakim000111@gmail.com', 'get in touch', NULL),
+(4, 'Get in Touch two', '01792268539', 'azizulhakim000111@gmail.com', 'get in touc', NULL),
+(6, 'Abdul korim', '01792268539', 'abdulkorimseo@gmail.com', 'Contact with us', NULL),
+(7, 'Azizul hakim', '01792268539', 'azizulhakim000111@gmail.com', 'welcome', NULL),
+(9, 'Asif', '01792268539', 'valaacosni@gmail.com', 'New Email', NULL),
+(10, 'Azizul hakim', '01792268539', 'valaacosni@gmail.com', 'new message', 'Email subject'),
+(11, 'jone andry', '01792268539', 'azizulhakim000111@gmail.com', 'I am software engineer', 'Email subject');
 
 -- --------------------------------------------------------
 
@@ -312,6 +373,26 @@ INSERT INTO `footer_right` (`id`, `name`, `link`) VALUES
 (4, 'Projects', 'name four'),
 (5, 'Mon', 'Link one right'),
 (6, 'Cokkie Notice', 'name four');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_meta`
+--
+
+CREATE TABLE `home_meta` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `des` varchar(255) NOT NULL,
+  `tag` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `home_meta`
+--
+
+INSERT INTO `home_meta` (`id`, `title`, `des`, `tag`) VALUES
+(1, 'Sk-associates home', 'description', 'tag tag');
 
 -- --------------------------------------------------------
 
@@ -527,6 +608,26 @@ INSERT INTO `portfolio_banner` (`id`, `name`, `title`, `button`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `portfolio_meta`
+--
+
+CREATE TABLE `portfolio_meta` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `des` varchar(255) NOT NULL,
+  `tag` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `portfolio_meta`
+--
+
+INSERT INTO `portfolio_meta` (`id`, `title`, `des`, `tag`) VALUES
+(1, 'Portfolio title', 'Portfolio Meta description', 'portfolio');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `portfolio_text`
 --
 
@@ -669,19 +770,21 @@ CREATE TABLE `table_get_in_touch` (
   `name` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `button` varchar(255) NOT NULL,
-  `status` varchar(60) NOT NULL
+  `status` varchar(60) NOT NULL,
+  `subject` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `table_get_in_touch`
 --
 
-INSERT INTO `table_get_in_touch` (`id`, `name`, `title`, `button`, `status`) VALUES
-(1, 'Get in Touch', 'Send as a Message', 'Send message', 'inactive'),
-(2, 'Get in Touch', 'Sent us a Message', 'send me', 'inactive'),
-(3, 'Get in Touch two', 'contact with us', 'Send message', 'inactive'),
-(4, 'Get in Touch three', 'contact with us', 'Send message', 'inactive'),
-(5, 'get in touch 4', 'contact with us', 'send me message', 'active');
+INSERT INTO `table_get_in_touch` (`id`, `name`, `title`, `button`, `status`, `subject`) VALUES
+(1, 'Get in Touch', 'Send as a Message', 'Send message', 'inactive', 'Email subject'),
+(2, 'Get in Touch', 'Sent us a Message', 'send me', 'inactive', NULL),
+(3, 'Get in Touch two', 'contact with us', 'Send message', 'inactive', NULL),
+(4, 'Get in Touch', 'Send us a Message', 'Send Now', 'inactive', 'Email subject'),
+(5, 'get in touch 4', 'contact with us', 'send me message', 'inactive', NULL),
+(6, 'Get in Touch two', 'title', 'Send message', 'active', 'Email subject');
 
 -- --------------------------------------------------------
 
@@ -778,6 +881,26 @@ INSERT INTO `team_banner` (`id`, `name`, `title`, `image`, `button`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `team_meta`
+--
+
+CREATE TABLE `team_meta` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `des` varchar(255) NOT NULL,
+  `tag` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `team_meta`
+--
+
+INSERT INTO `team_meta` (`id`, `title`, `des`, `tag`) VALUES
+(1, 'team tag tit', 'team  tag description', 'team tag');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `upcoming_portfolio`
 --
 
@@ -799,6 +922,12 @@ INSERT INTO `upcoming_portfolio` (`id`, `name`, `link`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `aboutus_meta`
+--
+ALTER TABLE `aboutus_meta`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `about_aboutus_img`
@@ -849,6 +978,12 @@ ALTER TABLE `client_list`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `client_meta`
+--
+ALTER TABLE `client_meta`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `client_text`
 --
 ALTER TABLE `client_text`
@@ -858,6 +993,12 @@ ALTER TABLE `client_text`
 -- Indexes for table `community_banner`
 --
 ALTER TABLE `community_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `community_meta`
+--
+ALTER TABLE `community_meta`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -876,6 +1017,12 @@ ALTER TABLE `footer_left`
 -- Indexes for table `footer_right`
 --
 ALTER TABLE `footer_right`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `home_meta`
+--
+ALTER TABLE `home_meta`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -936,6 +1083,12 @@ ALTER TABLE `portfolio_active`
 -- Indexes for table `portfolio_banner`
 --
 ALTER TABLE `portfolio_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `portfolio_meta`
+--
+ALTER TABLE `portfolio_meta`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1005,6 +1158,12 @@ ALTER TABLE `team_banner`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `team_meta`
+--
+ALTER TABLE `team_meta`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `upcoming_portfolio`
 --
 ALTER TABLE `upcoming_portfolio`
@@ -1013,6 +1172,12 @@ ALTER TABLE `upcoming_portfolio`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `aboutus_meta`
+--
+ALTER TABLE `aboutus_meta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `about_aboutus_img`
@@ -1063,6 +1228,12 @@ ALTER TABLE `client_list`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `client_meta`
+--
+ALTER TABLE `client_meta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `client_text`
 --
 ALTER TABLE `client_text`
@@ -1075,10 +1246,16 @@ ALTER TABLE `community_banner`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `community_meta`
+--
+ALTER TABLE `community_meta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `footer_left`
@@ -1091,6 +1268,12 @@ ALTER TABLE `footer_left`
 --
 ALTER TABLE `footer_right`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `home_meta`
+--
+ALTER TABLE `home_meta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `know_aboutus_content`
@@ -1153,6 +1336,12 @@ ALTER TABLE `portfolio_banner`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `portfolio_meta`
+--
+ALTER TABLE `portfolio_meta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `portfolio_text`
 --
 ALTER TABLE `portfolio_text`
@@ -1192,7 +1381,7 @@ ALTER TABLE `table_check`
 -- AUTO_INCREMENT for table `table_get_in_touch`
 --
 ALTER TABLE `table_get_in_touch`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `table_news`
@@ -1216,6 +1405,12 @@ ALTER TABLE `table_service_right`
 -- AUTO_INCREMENT for table `team_banner`
 --
 ALTER TABLE `team_banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `team_meta`
+--
+ALTER TABLE `team_meta`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --

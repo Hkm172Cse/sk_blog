@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\aboutPage\partnerController;
+use App\Http\Controllers\back_end\userInfoController;
 use App\Http\Controllers\Client\clientBannerController;
 use App\Http\Controllers\Client\clientListController;
 use App\Http\Controllers\Client\clientTextController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\Front_end\Community\communityController;
 use App\Http\Controllers\Front_end\Home\HomeController;
 use App\Http\Controllers\Front_end\Portfolio\portfolioController;
 use App\Http\Controllers\Front_end\team\teamController;
+use App\Http\Controllers\Meta\metaController;
 use App\Http\Controllers\team\staffController;
 use App\Http\Controllers\team\teamBannerController;
 use Illuminate\Support\Facades\Route;
@@ -319,13 +321,48 @@ Route::group(['prefix' => 'tech_ics'], function () {
     Route::get('/our_team', [teamController::class, 'index'])->name('website.our_team');
 });
 
+
+
 Route::post('/contact', [HomeController::Class, 'contact'])->name('get.in.touch');
+Route::get('/userinfo', [userInfoController::class, 'index'])->name('user.info');
+Route::post('/email_info', [userInfoController::class, 'userEmailInfo']);
+Route::get('/delete_get_in_touch/{id}', [userInfoController::class, 'delete'])->name('touch.user.delete');
+Route::post('/send_to_touch_user', [userInfoController::class, 'sendTo']);
 
 
+// Meta Routes
 
+Route::group(['prefix' => 'meta'], function () {
 
+    //Home Meta Routes
+    Route::get('/home', [metaController::class, 'homeMeta'])->name('home.page.meta');
+    Route::get('/home_meta_edit/{id}', [metaController::class, 'homeEdit'])->name('home.meta.edit');
+    Route::post('/home_meta_update', [metaController::class, 'homeUpdate'])->name('update.home.meta');
 
+    // About us Meta Routes
+    Route::get('/about', [metaController::class, 'aboutUsMeta'])->name('about.page.meta');
+    Route::get('/aboutus_meta_edit/{id}', [metaController::class, 'abutUsEdit'])->name('aboutus.meta.edit');
+    Route::post('/aboutus_meta_update', [metaController::class, 'aboutusUpdate'])->name('update.aboutus.meta');
 
-// password reset link = https://www.youtube.com/watch?v=SuIQ20H-hc4  
-// after login browser back_button = https://www.itsolutionstuff.com/post/laravel-5-how-to-prevent-browser-back-button-after-user-logoutexample.html
-// background set = style="background-image:url({{asset('images/about/'.$val->image)}}); background-size:cover; background-position:center"
+    // Community Meta Routes
+    Route::get('/community', [metaController::class, 'communityMeta'])->name('community.page.meta');
+    Route::get('/community_meta_edit/{id}', [metaController::class, 'communityEdit'])->name('community.meta.edit');
+    Route::post('/community_meta_update', [metaController::class, 'communityUpdate'])->name('update.community.meta');
+
+    // Portfolio Meta Routes
+    Route::get('/portfolio', [metaController::class, 'portfolioMeta'])->name('portfolio.page.meta');
+    Route::get('/portfolio_meta_edit/{id}', [metaController::class, 'portfolioEdit'])->name('portpolio.meta.edit');
+    Route::post('/portfolio_meta_update', [metaController::class, 'portfolioUpdate'])->name('update.portfolio.meta');
+
+    // Cleint Meta Routes
+    Route::get('/client', [metaController::class, 'clientMeta'])->name('client.page.meta');
+    Route::get('/client_meta_edit/{id}', [metaController::class, 'clientEdit'])->name('client.meta.edit');
+    Route::post('/client_meta_update', [metaController::class, 'portfolioUpdate'])->name('update.client.meta');
+
+    // Team Meta Routes
+    Route::get('/team', [metaController::class, 'teamMeta'])->name('team.page.meta');
+    Route::get('/team_meta_edit/{id}', [metaController::class, 'teamEdit'])->name('team.meta.edit');
+    Route::post('/team_meta_update', [metaController::class, 'teamMetaUpdate'])->name('update.team.meta');
+});
+
+//Meta Routes

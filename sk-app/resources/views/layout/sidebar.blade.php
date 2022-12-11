@@ -83,6 +83,12 @@
                             Business Overview
                         </a>
                     </li>
+
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('user.info')}}">
+                            Users
+                        </a>
+                    </li>
                 </ul>
             </div>
         </li>
@@ -291,5 +297,53 @@
                 </ul>
             </div>
         </li>
+
+        <!--Meta-tag-->
+
+        <li class="techics-nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#meta" aria-expanded="" aria-controls="">
+                <i class="fas fa-atom menu-icon"></i>
+                <span class="menu-title">Meta Tags</span>
+                <i class="fas fa-chevron-down menu-arrow"></i>
+            </a>
+            <div class="collapse" id="meta">
+                <ul class="nav flex-column sub-menu">
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('home.page.meta')}}">
+                            Home Meta
+                        </a>
+                    </li>
+
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('about.page.meta')}}">
+                            About us Meta
+                        </a>
+                    </li>
+
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('community.page.meta')}}">
+                            Community Meta
+                        </a>
+                    </li>
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('portfolio.page.meta')}}">
+                            Portfolio Meta
+                        </a>
+                    </li>
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('client.page.meta')}}">
+                            Client Meta
+                        </a>
+                    </li>
+                    <li class="techics-nav-item">
+                        <a class="nav-link" href="{{route('team.page.meta')}}">
+                            Team Meta
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <!--Meta-tag-->
     </ul>
 </nav>

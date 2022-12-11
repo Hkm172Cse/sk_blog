@@ -23,7 +23,8 @@ class touchController extends Controller
         $res = touchModel::where('id',$id)->update([
             'name'=>$req->name,
             'title'=>$req->title,
-            'button'=>$req->button
+            'button'=>$req->button,
+            'subject'=>$req->subject
         ]); 
         if($res){
             return redirect(route('getintouch.content'))->with('update',"supdate is successfully!!!");
@@ -40,7 +41,8 @@ class touchController extends Controller
         $req->validate([
             'name'=>'required',
             'title'=>'required',
-            'button'=>'required'
+            'button'=>'required',
+            'subject'=>'required',
         ]);
 
         touchModel::where('status','active')->update(['status'=>'inactive']);
@@ -49,7 +51,8 @@ class touchController extends Controller
             'name'=>$req->name,
             'title'=>$req->title,
             'button'=>$req->button,
-            'status'=>$req->status
+            'status'=>$req->status,
+            'subject'=>$req->subject,
         ]);
         
         if($res){
